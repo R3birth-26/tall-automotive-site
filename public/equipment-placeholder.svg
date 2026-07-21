@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 260" width="400" height="260">
+  <rect width="400" height="260" fill="#1f1f1f"/>
+  <g fill="#3a3a3a">
+    <rect x="40" y="140" width="320" height="70" rx="10"/>
+    <rect x="70" y="100" width="260" height="60" rx="14"/>
+    <circle cx="110" cy="210" r="22"/>
+    <circle cx="290" cy="210" r="22"/>
+  </g>
+  <text x="200" y="245" fill="#777" font-family="Arial, sans-serif" font-size="14" text-anchor="middle">
+    Photo coming soon
+  </text>
+</svg>
