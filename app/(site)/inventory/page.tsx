@@ -50,7 +50,7 @@ export default async function InventoryPage({
     <div className="relative">
       <FixedGradientBackground />
       <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6">
-        <h1 className="font-display text-3xl font-bold text-white">Inventory</h1>
+        <h1 className="font-display text-4xl font-bold text-white sm:text-5xl">Inventory</h1>
         <p className="mt-1 text-white/50">{items.length} items found</p>
 
         <div className="mt-8 grid grid-cols-1 gap-8 lg:grid-cols-4">

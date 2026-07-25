@@ -1,8 +1,11 @@
 import Link from "next/link";
 import { prisma } from "@/lib/prisma";
 import { EquipmentCard } from "@/components/EquipmentCard";
-import { PixelCanvas } from "@/components/ui/pixel-canvas";
+import { HighlightCardShell } from "@/components/ui/highlight-card";
+import { TestimonialSection } from "@/components/ui/testimonial-section";
 import { FixedGradientBackground } from "@/components/FixedGradientBackground";
+import { DraftNotice } from "@/components/DraftNotice";
+import { testimonials } from "@/lib/testimonials";
 import { business } from "@/lib/site";
 
 export default async function HomePage() {
@@ -42,7 +45,7 @@ export default async function HomePage() {
                 <p className="font-display text-sm font-semibold uppercase tracking-[0.3em] text-brand-red">
                   Hampstead, NH — Trucks, Vans, Mowers, Tractors
                 </p>
-                <h1 className="font-display mt-3 text-[clamp(1.75rem,4vw,3rem)] font-bold leading-tight text-white">
+                <h1 className="font-display mt-3 text-[clamp(2rem,5vw,3.75rem)] font-bold leading-tight text-white">
                   Truck &amp; Equipment Sales &amp; Service
                 </h1>
                 <p className="mt-4 text-base text-neutral-200 sm:text-lg">
@@ -70,7 +73,7 @@ export default async function HomePage() {
         </div>
       </section>
 
-      <section className="bg-brand-charcoal">
+      <section className="border-b border-white/10 bg-black/30 backdrop-blur-md">
         <div className="mx-auto grid max-w-7xl grid-cols-1 divide-y divide-white/10 sm:grid-cols-3 sm:divide-x sm:divide-y-0">
           <QuickLinkTile title="Inventory" subline="See Inventory" href="/inventory" />
           <QuickLinkTile
@@ -89,7 +92,7 @@ export default async function HomePage() {
 
       <section className="relative mx-auto max-w-7xl px-4 py-16 sm:px-6">
         <div className="mb-8 flex items-end justify-between">
-          <h2 className="font-display text-2xl font-bold text-white sm:text-3xl">
+          <h2 className="font-display text-3xl font-bold text-white sm:text-4xl">
             Featured Inventory
           </h2>
           <Link href="/inventory" className="text-sm font-semibold text-brand-red hover:underline">
@@ -109,45 +112,51 @@ export default async function HomePage() {
       </section>
 
       <section className="bg-brand-black px-4 py-16 sm:px-6">
-        <div className="group relative mx-auto max-w-3xl overflow-hidden rounded-3xl border border-brand-red/40 bg-brand-charcoal px-8 py-16 text-center shadow-[0_0_25px_rgba(216,31,38,0.25)] transition-shadow duration-500 hover:border-brand-red/70 hover:shadow-[0_0_45px_rgba(216,31,38,0.5)]">
-          <PixelCanvas
-            gap={10}
-            speed={20}
-            colors={["#7a1216", "#4a0d10", "#6b6b6b"]}
-            style={{ opacity: 0.35 }}
-          />
-          <div className="relative z-10">
-            <img
-              src="/bb-logo-horizontal-orange.svg"
-              alt="Bad Boy Mowers"
-              className="mx-auto h-10 w-auto sm:h-12"
-            />
-            <h2 className="font-display mt-6 text-3xl font-bold text-white sm:text-4xl">
-              Your Local Authorized Bad Boy Dealer
-            </h2>
-            <p className="mx-auto mt-4 max-w-xl text-neutral-400">
-              Look no further than Tall Automotive&apos;s lineup of Bad Boy Mowers, tractors, and
-              handheld equipment. Choose from cost-effective daily mowers to heavy-duty tractors
-              built to match your property. Contact us today and we&apos;ll help find the perfect
-              fit for your yard or job site!
-            </p>
-            <div className="mx-auto mt-8 flex max-w-sm flex-col gap-3">
-              <Link
-                href="/inventory"
-                className="rounded-lg bg-white px-6 py-3 text-center font-display text-sm font-bold uppercase tracking-wide text-black hover:bg-neutral-200"
-              >
-                Shop Bad Boy Equipment &rarr;
-              </Link>
-              <Link
-                href="/contact"
-                className="rounded-lg border border-white/20 px-6 py-3 text-center font-display text-sm font-bold uppercase tracking-wide text-white hover:bg-white/5"
-              >
-                Contact Us
-              </Link>
+        <div className="mx-auto max-w-3xl">
+          <HighlightCardShell>
+            <div className="relative z-10 px-8 py-16 text-center">
+              <img
+                src="/bb-logo-horizontal-orange.svg"
+                alt="Bad Boy Mowers"
+                className="mx-auto h-10 w-auto sm:h-12"
+              />
+              <h2 className="mb-4 mt-6 bg-gradient-to-r from-white via-gray-100 to-white bg-clip-text text-4xl font-bold text-transparent transition-transform duration-300 group-hover:scale-105 sm:text-5xl">
+                Your Local Authorized Bad Boy Dealer
+              </h2>
+              <p className="mx-auto max-w-xl text-neutral-300 transition-colors duration-300 group-hover:text-gray-200">
+                Look no further than Tall Automotive&apos;s lineup of Bad Boy Mowers, tractors, and
+                handheld equipment. Choose from cost-effective daily mowers to heavy-duty tractors
+                built to match your property. Contact us today and we&apos;ll help find the perfect
+                fit for your yard or job site!
+              </p>
+
+              <div className="mx-auto mt-6 h-0.5 w-1/3 rounded-full bg-gradient-to-r from-transparent via-brand-red to-transparent transition-all duration-500 group-hover:h-1 group-hover:w-1/2" />
+
+              <div className="mx-auto mt-8 flex max-w-sm flex-col gap-3">
+                <Link
+                  href="/inventory"
+                  className="rounded-lg bg-white px-6 py-3 text-center font-display text-sm font-bold uppercase tracking-wide text-black hover:bg-neutral-200"
+                >
+                  Shop Bad Boy Equipment &rarr;
+                </Link>
+                <Link
+                  href="/contact"
+                  className="rounded-lg border border-white/20 px-6 py-3 text-center font-display text-sm font-bold uppercase tracking-wide text-white hover:bg-white/5"
+                >
+                  Contact Us
+                </Link>
+              </div>
             </div>
-          </div>
+          </HighlightCardShell>
         </div>
       </section>
+
+      <div className="mx-auto max-w-7xl px-4 pt-10 sm:px-6">
+        <DraftNotice>
+          Sample testimonials below — swap in real customer reviews before this goes live.
+        </DraftNotice>
+      </div>
+      <TestimonialSection testimonials={testimonials} />
     </div>
   );
 }

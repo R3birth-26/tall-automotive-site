@@ -48,7 +48,7 @@ export function TeamMemberModal({
         />
 
         <div>
-          <h2 className="text-2xl font-bold text-neutral-800">
+          <h2 className="text-3xl font-bold text-neutral-800">
             {member.name} - {member.title}
           </h2>
           {(member.phone || member.email) && (

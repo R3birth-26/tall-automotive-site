@@ -1,20 +1,24 @@
 import Link from "next/link";
+import { Truck, CreditCard, Tractor } from "lucide-react";
 import { Logo } from "@/components/Logo";
-import { GlowBorderBox } from "@/components/ui/glow-border-box";
+import { HighlightCard } from "@/components/ui/highlight-card";
 import { business, nav } from "@/lib/site";
 
 const infoItems = [
   {
     title: "Trucks & Vans",
     body: "We sell trucks and vans, and specialize in repair — but we service everything that comes through the door.",
+    icon: <Truck className="h-8 w-8 text-white" />,
   },
   {
     title: "Financing Available",
     body: "Every truck, van, mower, tractor, and handheld listing shows both a cash price and a finance price up front.",
+    icon: <CreditCard className="h-8 w-8 text-white" />,
   },
   {
     title: "Bad Boy Equipment",
     body: "Authorized Bad Boy dealer for mowers, tractors, and handheld equipment — sales, parts, and service.",
+    icon: <Tractor className="h-8 w-8 text-white" />,
   },
 ];
 
@@ -23,12 +27,7 @@ export function Footer() {
     <footer className="mt-auto bg-brand-black text-neutral-300">
       <div className="mx-auto grid max-w-7xl gap-8 px-4 pt-16 sm:px-6 md:grid-cols-3">
         {infoItems.map((item) => (
-          <GlowBorderBox key={item.title}>
-            <div className="p-6 text-center">
-              <h3 className="font-display text-lg font-bold text-brand-red">{item.title}</h3>
-              <p className="mt-2 text-sm text-neutral-300">{item.body}</p>
-            </div>
-          </GlowBorderBox>
+          <HighlightCard key={item.title} title={item.title} description={[item.body]} icon={item.icon} />
         ))}
       </div>
 
@@ -39,7 +38,7 @@ export function Footer() {
         </div>
 
         <div>
-          <h3 className="font-display text-sm font-semibold uppercase tracking-wide text-white">
+          <h3 className="font-display text-base font-semibold uppercase tracking-wide text-white">
             Visit Us
           </h3>
           <p className="mt-3 text-sm">
@@ -64,7 +63,7 @@ export function Footer() {
         </div>
 
         <div>
-          <h3 className="font-display text-sm font-semibold uppercase tracking-wide text-white">
+          <h3 className="font-display text-base font-semibold uppercase tracking-wide text-white">
             Quick Links
           </h3>
           <ul className="mt-3 space-y-2 text-sm">

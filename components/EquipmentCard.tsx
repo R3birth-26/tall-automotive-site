@@ -53,7 +53,7 @@ export function EquipmentCard({ equipment }: { equipment: EquipmentCardData }) {
           </span>
         </div>
         <div className="p-4">
-          <h3 className="font-display text-lg font-semibold leading-tight text-white">
+          <h3 className="font-display text-xl font-semibold leading-tight text-white">
             {equipment.year} {equipment.make} {equipment.model}
           </h3>
           {equipment.trim && <p className="text-sm text-white/50">{equipment.trim}</p>}

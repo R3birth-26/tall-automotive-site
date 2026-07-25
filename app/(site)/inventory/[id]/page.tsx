@@ -46,7 +46,7 @@ export default async function EquipmentDetailPage({ params }: PageProps<"/invent
                 {equipment.status}
               </span>
             )}
-            <h1 className="font-display text-3xl font-bold text-white">
+            <h1 className="font-display text-4xl font-bold text-white">
               {equipment.year} {equipment.make} {equipment.model}
             </h1>
             {equipment.trim && <p className="mt-1 text-lg text-white/50">{equipment.trim}</p>}
@@ -92,7 +92,7 @@ export default async function EquipmentDetailPage({ params }: PageProps<"/invent
 
             {equipment.description && (
               <div className="mt-6">
-                <h2 className="font-display text-lg font-bold text-white">Description</h2>
+                <h2 className="font-display text-xl font-bold text-white">Description</h2>
                 <p className="mt-2 whitespace-pre-line text-white/60">{equipment.description}</p>
               </div>
             )}

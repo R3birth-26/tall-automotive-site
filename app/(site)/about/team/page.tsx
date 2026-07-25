@@ -7,7 +7,7 @@ export default function OurTeamPage() {
     <div className="relative">
       <FixedGradientBackground />
       <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
-        <h1 className="font-display text-center text-4xl font-extrabold uppercase italic tracking-wide text-brand-red sm:text-5xl">
+        <h1 className="font-display text-center text-5xl font-extrabold uppercase italic tracking-wide text-brand-red sm:text-6xl">
           Our Team
         </h1>
         <p className="mx-auto mt-3 max-w-xl text-center text-sm text-neutral-400 sm:text-base">

@@ -5,6 +5,9 @@ import { useState, type FormEvent } from "react";
 // TODO: replace with Tall Automotive's own Web3Forms access key (web3forms.com).
 const WEB3FORMS_KEY = "";
 
+const fieldClass =
+  "w-full rounded-full border border-white/15 bg-white/5 px-5 py-3 text-sm text-white placeholder:text-neutral-500 focus:border-brand-red focus:outline-none";
+
 export function ContactForm() {
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
 
@@ -27,10 +30,10 @@ export function ContactForm() {
 
   if (status === "sent") {
     return (
-      <div className="rounded-lg border border-green-200 bg-green-50 p-6 text-green-800">
+      <div className="rounded-2xl border border-green-500/30 bg-green-500/10 p-6 text-green-300">
         Thanks for reaching out — we&apos;ll be in touch soon.
         {!WEB3FORMS_KEY && (
-          <p className="mt-2 text-xs text-green-700">
+          <p className="mt-2 text-xs text-green-400">
             (Demo mode — connect a Web3Forms key to actually deliver submissions.)
           </p>
         )}
@@ -39,36 +42,30 @@ export function ContactForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-4 rounded-lg border border-neutral-200 bg-white p-6">
+    <form onSubmit={handleSubmit} className="space-y-4">
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-        <div>
-          <label className="block text-sm font-medium text-neutral-700">Name</label>
-          <input name="name" required className="mt-1 w-full rounded-md border border-neutral-300 px-3 py-2" />
-        </div>
-        <div>
-          <label className="block text-sm font-medium text-neutral-700">Phone</label>
-          <input name="phone" className="mt-1 w-full rounded-md border border-neutral-300 px-3 py-2" />
-        </div>
+        <input name="name" required placeholder="Your Name..." className={fieldClass} />
+        <input name="phone" placeholder="Your Phone..." className={fieldClass} />
       </div>
-      <div>
-        <label className="block text-sm font-medium text-neutral-700">Email</label>
-        <input type="email" name="email" required className="mt-1 w-full rounded-md border border-neutral-300 px-3 py-2" />
-      </div>
-      <div>
-        <label className="block text-sm font-medium text-neutral-700">Message</label>
-        <textarea name="message" rows={4} required className="mt-1 w-full rounded-md border border-neutral-300 px-3 py-2" />
-      </div>
+      <input type="email" name="email" required placeholder="example@yourmail.com" className={fieldClass} />
+      <textarea
+        name="message"
+        rows={5}
+        required
+        placeholder="Type Here..."
+        className="w-full rounded-3xl border border-white/15 bg-white/5 px-5 py-3 text-sm text-white placeholder:text-neutral-500 focus:border-brand-red focus:outline-none"
+      />
 
       {status === "error" && (
-        <p className="text-sm text-red-600">Something went wrong — please call us instead.</p>
+        <p className="text-sm text-red-400">Something went wrong — please call us instead.</p>
       )}
 
       <button
         type="submit"
         disabled={status === "sending"}
-        className="rounded-md bg-brand-red px-6 py-3 font-display text-sm font-bold uppercase tracking-wide text-white hover:bg-brand-red-dark disabled:opacity-60"
+        className="rounded-full border border-white/30 px-8 py-3 font-display text-sm font-bold uppercase tracking-wide text-white transition hover:bg-white/10 disabled:opacity-60"
       >
-        {status === "sending" ? "Sending…" : "Send Message"}
+        {status === "sending" ? "Sending…" : "Send Now"}
       </button>
     </form>
   );
