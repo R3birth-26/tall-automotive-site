@@ -8,6 +8,11 @@ import { DraftNotice } from "@/components/DraftNotice";
 import { testimonials } from "@/lib/testimonials";
 import { business } from "@/lib/site";
 
+// Always render on request rather than prerendering at build time — this
+// page queries live equipment data, so a build-time snapshot would go stale
+// the moment someone adds/edits inventory through /admin.
+export const dynamic = "force-dynamic";
+
 export default async function HomePage() {
   const featured = await prisma.equipment.findMany({
     where: { featured: true, status: "available" },
