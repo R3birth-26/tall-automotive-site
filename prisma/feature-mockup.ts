@@ -1,9 +1,15 @@
 import { PrismaClient } from "../app/generated/prisma/client";
 import { PrismaBetterSqlite3 } from "@prisma/adapter-better-sqlite3";
+import { PrismaLibSql } from "@prisma/adapter-libsql";
 
-const adapter = new PrismaBetterSqlite3({
-  url: process.env.DATABASE_URL ?? "file:./dev.db",
-});
+const adapter = process.env.TURSO_DATABASE_URL
+  ? new PrismaLibSql({
+      url: process.env.TURSO_DATABASE_URL,
+      authToken: process.env.TURSO_AUTH_TOKEN,
+    })
+  : new PrismaBetterSqlite3({
+      url: process.env.DATABASE_URL ?? "file:./dev.db",
+    });
 const prisma = new PrismaClient({ adapter });
 
 const featuredStockNumbers = [
