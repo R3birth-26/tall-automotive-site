@@ -27,7 +27,7 @@ export const team: TeamMember[] = [
       "Specializing in general automotive maintenance, Justin takes pride in his attention to detail and commitment to customer safety. Every vehicle he services receives a thorough 22-point inspection to help ensure it is safe, reliable, and ready for the road.",
       "Justin believes that every customer deserves quality workmanship and honest service, and he works hard to make sure each vehicle leaves the shop in top condition.",
     ],
-    photo: "/uploads/justin.jpg",
+    photo: "/images/justin.jpg",
   },
   {
     id: "tristan",
@@ -43,7 +43,7 @@ export const team: TeamMember[] = [
       "As a highly skilled automotive repair technician, Tristan has the knowledge and experience to tackle everything from routine maintenance to complex repairs. He takes tremendous pride in his craftsmanship, paying close attention to every detail and ensuring each repair is completed with precision.",
       "Known for his clean workmanship and meticulous attention to detail, Tristan approaches every job with the goal of making it look and perform as though it came straight from the factory. His dedication to quality and commitment to doing the job right make him an invaluable member of the Tall Automotive Sales and Service Corp. team.",
     ],
-    photo: "/uploads/tristan.jpg",
+    photo: "/images/tristan.jpg",
   },
   {
     id: "gary",
@@ -58,7 +58,7 @@ export const team: TeamMember[] = [
       "Gary has been in the automotive sales industry for over 40 years, bringing decades of experience and product knowledge to every customer he serves. His career began in 1984, selling Porsche, Mercedes-Benz, and BMW in southern Massachusetts, where he built a reputation for outstanding customer service and professionalism.",
       "Known for his friendly personality and extensive knowledge, Gary takes pride in helping each customer find the right solution for their needs. Whether you're shopping for new or used equipment, Gary is committed to making the buying process easy, honest, and enjoyable. His goal is simple—to ensure every customer leaves confident they received the right equipment at a fair price.",
     ],
-    photo: "/uploads/gary.jpg",
+    photo: "/images/gary.jpg",
   },
   {
     id: "josh",
@@ -75,6 +75,6 @@ export const team: TeamMember[] = [
       "Whether you're purchasing new equipment, maintaining your vehicle, or repairing your lawn and commercial equipment, Josh believes in treating every customer like family. He takes the time to understand each customer's needs, works within their budget whenever possible, and is committed to providing honest advice, quality workmanship, and a fair deal every time.",
       "For Josh, success isn't just about fixing vehicles or selling equipment—it's about building lasting relationships based on trust, integrity, and exceptional service.",
     ],
-    photo: "/uploads/josh.jpg",
+    photo: "/images/josh.jpg",
   },
 ];

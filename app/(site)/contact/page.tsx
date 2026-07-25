@@ -74,7 +74,7 @@ export default function ContactPage() {
 
       <section className="relative overflow-hidden px-4 py-24 sm:px-6">
         <img
-          src="/uploads/Tall-Hero.jpg"
+          src="/images/Tall-Hero.jpg"
           alt=""
           className="absolute inset-0 h-full w-full object-cover object-center"
         />

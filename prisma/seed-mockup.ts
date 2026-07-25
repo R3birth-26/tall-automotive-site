@@ -23,7 +23,7 @@ const items = [
     cashPrice: 8519,
     financePrice: 9019,
     featured: false,
-    photo: "/uploads/639185039582555983-1.webp",
+    photo: "/images/639185039582555983-1.webp",
   },
   {
     category: "Mowers",
@@ -41,7 +41,7 @@ const items = [
     cashPrice: 6199,
     financePrice: 6699,
     featured: false,
-    photo: "/uploads/639184929673339636-3.webp",
+    photo: "/images/639184929673339636-3.webp",
   },
   {
     category: "Mowers",
@@ -59,7 +59,7 @@ const items = [
     cashPrice: 5199,
     financePrice: 5699,
     featured: false,
-    photo: "/uploads/639184934853341009.webp",
+    photo: "/images/639184934853341009.webp",
   },
   {
     category: "Tractors",
@@ -77,7 +77,7 @@ const items = [
     cashPrice: 14844,
     financePrice: 15344,
     featured: false,
-    photo: "/uploads/639190314695456660.webp",
+    photo: "/images/639190314695456660.webp",
   },
   {
     category: "Tractors",
@@ -95,7 +95,7 @@ const items = [
     cashPrice: 23739,
     financePrice: 24239,
     featured: false,
-    photo: "/uploads/639190331283734468.webp",
+    photo: "/images/639190331283734468.webp",
   },
   {
     category: "Tractors",
@@ -113,7 +113,7 @@ const items = [
     cashPrice: 17688,
     financePrice: 18188,
     featured: false,
-    photo: "/uploads/639190342735498494-1.webp",
+    photo: "/images/639190342735498494-1.webp",
   },
 ];
 

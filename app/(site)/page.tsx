@@ -34,7 +34,7 @@ export default async function HomePage() {
       <section className="relative overflow-hidden bg-brand-charcoal">
         <div className="relative h-[clamp(360px,50vw,640px)] w-full">
           <img
-            src="/uploads/Tall-Hero.jpg"
+            src="/images/Tall-Hero.jpg"
             alt="Tall Automotive shop"
             className="absolute inset-0 h-full w-full object-cover object-center"
           />
