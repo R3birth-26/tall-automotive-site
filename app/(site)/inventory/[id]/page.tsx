@@ -57,10 +57,9 @@ export default async function EquipmentDetailPage({ params }: PageProps<"/invent
                 <p className="font-display text-3xl font-bold text-brand-red">{money(equipment.cashPrice)}</p>
               </div>
               <div>
-                <p className="text-xs uppercase tracking-wide text-white/40">Finance Price</p>
-                <p className="font-display text-3xl font-bold text-white">
-                  {equipment.financePrice ? money(equipment.financePrice) : "Call for details"}
-                </p>
+                <p className="text-xs uppercase tracking-wide text-white/40">Financing</p>
+                <p className="font-display text-2xl font-bold text-white">0% Interest</p>
+                <p className="text-sm font-semibold text-white/60">for 48 Months</p>
               </div>
             </div>
 
@@ -76,6 +75,14 @@ export default async function EquipmentDetailPage({ params }: PageProps<"/invent
                 className="rounded-md border border-white/20 px-5 py-3 font-display text-sm font-bold uppercase tracking-wide text-white hover:bg-white/5"
               >
                 Text Us
+              </a>
+              <a
+                href={business.financeApplicationUrl || `/financing?unit=${encodeURIComponent(`${equipment.year ?? ""} ${equipment.make} ${equipment.model}`.trim())}#apply`}
+                target={business.financeApplicationUrl ? "_blank" : undefined}
+                rel={business.financeApplicationUrl ? "noreferrer" : undefined}
+                className="rounded-md border border-brand-red/40 bg-brand-red/10 px-5 py-3 font-display text-sm font-bold uppercase tracking-wide text-brand-red hover:bg-brand-red/20"
+              >
+                Apply — 0% for 48 Mo
               </a>
             </div>
 

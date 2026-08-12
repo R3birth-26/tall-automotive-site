@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { GlowCard } from "@/components/ui/glow-card";
 import { EquipmentCardActions } from "@/components/EquipmentCardActions";
+import { business } from "@/lib/site";
 
 export function money(n: number) {
   return n.toLocaleString("en-US", { style: "currency", currency: "USD", maximumFractionDigits: 0 });
@@ -26,7 +27,9 @@ export function EquipmentCard({ equipment }: { equipment: EquipmentCardData }) {
   const photo = equipment.photos[0]?.url ?? "/equipment-placeholder.svg";
   const sold = equipment.status !== "available";
   const alt = `${equipment.year ?? ""} ${equipment.make} ${equipment.model}`;
-  const financeHref = `/financing?unit=${encodeURIComponent(alt.trim())}#apply`;
+  const financeExternal = Boolean(business.financeApplicationUrl);
+  const financeHref =
+    business.financeApplicationUrl || `/financing?unit=${encodeURIComponent(alt.trim())}#apply`;
 
   return (
     <GlowCard className="group">
@@ -69,17 +72,22 @@ export function EquipmentCard({ equipment }: { equipment: EquipmentCardData }) {
               <p className="text-xs uppercase tracking-wide text-white/40">Cash Price</p>
               <p className="font-display text-xl font-bold text-brand-red">{money(equipment.cashPrice)}</p>
             </div>
-            {equipment.financePrice && (
-              <div className="text-right">
-                <p className="text-xs uppercase tracking-wide text-white/40">Finance Price</p>
-                <p className="text-sm font-semibold text-white/80">{money(equipment.financePrice)}</p>
-              </div>
-            )}
+            <div className="rounded-md border border-brand-red/30 bg-brand-red/10 px-3 py-1.5 text-right">
+              <p className="font-display text-sm font-bold uppercase leading-tight text-brand-red">
+                0% Interest
+              </p>
+              <p className="text-[11px] font-semibold uppercase tracking-wide text-white/60">48 Months</p>
+            </div>
           </div>
         </div>
       </Link>
 
-      <EquipmentCardActions photos={equipment.photos} alt={alt} financeHref={financeHref} />
+      <EquipmentCardActions
+        photos={equipment.photos}
+        alt={alt}
+        financeHref={financeHref}
+        financeExternal={financeExternal}
+      />
     </GlowCard>
   );
 }

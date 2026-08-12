@@ -14,10 +14,12 @@ export function EquipmentCardActions({
   photos,
   alt,
   financeHref,
+  financeExternal,
 }: {
   photos: { url: string }[];
   alt: string;
   financeHref: string;
+  financeExternal?: boolean;
 }) {
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
 
@@ -45,14 +47,23 @@ export function EquipmentCardActions({
           <Images className="h-3.5 w-3.5" />
           Photos {photos.length > 0 && `(${photos.length})`}
         </button>
-        <Link
-          href={financeHref}
-          onClick={(e) => e.stopPropagation()}
-          className={actionButton}
-        >
-          <CreditCard className="h-3.5 w-3.5" />
-          Apply for Finance
-        </Link>
+        {financeExternal ? (
+          <a
+            href={financeHref}
+            target="_blank"
+            rel="noreferrer"
+            onClick={(e) => e.stopPropagation()}
+            className={actionButton}
+          >
+            <CreditCard className="h-3.5 w-3.5" />
+            Apply — 0% APR
+          </a>
+        ) : (
+          <Link href={financeHref} onClick={(e) => e.stopPropagation()} className={actionButton}>
+            <CreditCard className="h-3.5 w-3.5" />
+            Apply for Finance
+          </Link>
+        )}
       </div>
 
       {lightboxIndex !== null &&
