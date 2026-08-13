@@ -54,9 +54,9 @@ export default async function HomePage() {
                   Mowers, Tractors &amp; Power Equipment Sales and Service in Hampstead, NH
                 </h1>
                 <p className="mt-4 text-base text-neutral-200 sm:text-lg">
-                  Shop Bad Boy Mowers, tractors, and handheld equipment — every unit listed with a
-                  cash price and 0% financing up front. Plus full-service repair on everything we
-                  sell and more.
+                  Shop residential and commercial mowers, tractors, mini excavators, and handheld
+                  power equipment. Plus expert sales, parts, and service for Bad Boy Mowers and
+                  more.
                 </p>
                 <div className="mt-8 flex flex-wrap gap-4">
                   <a
