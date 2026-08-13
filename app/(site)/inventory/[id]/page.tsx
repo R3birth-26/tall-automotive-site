@@ -53,8 +53,18 @@ export default async function EquipmentDetailPage({ params }: PageProps<"/invent
 
             <div className="mt-6 grid grid-cols-2 gap-4 rounded-lg border border-white/10 bg-white/5 p-5 backdrop-blur">
               <div>
-                <p className="text-xs uppercase tracking-wide text-white/40">Cash Price</p>
-                <p className="font-display text-3xl font-bold text-brand-red">{money(equipment.cashPrice)}</p>
+                <p className="text-xs uppercase tracking-wide text-white/40">Starting At</p>
+                {equipment.monthlyPrice != null ? (
+                  <>
+                    <p className="font-display text-3xl font-bold text-brand-red">
+                      {money(equipment.monthlyPrice)}
+                      <span className="text-lg font-semibold">/mo</span>
+                    </p>
+                    <p className="mt-1 text-xs text-white/40">{money(equipment.cashPrice)} cash price</p>
+                  </>
+                ) : (
+                  <p className="font-display text-3xl font-bold text-brand-red">{money(equipment.cashPrice)}</p>
+                )}
               </div>
               <div>
                 <p className="text-xs uppercase tracking-wide text-white/40">Financing</p>

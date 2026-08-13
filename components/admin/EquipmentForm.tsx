@@ -24,6 +24,7 @@ type Equipment = {
   description: string | null;
   cashPrice: number;
   financePrice: number | null;
+  monthlyPrice: number | null;
   status: string;
   featured: boolean;
 };
@@ -138,6 +139,13 @@ export function EquipmentForm({
           name="financePrice"
           type="number"
           defaultValue={equipment?.financePrice ?? ""}
+        />
+        <Field
+          label="Monthly Price ($/mo)"
+          name="monthlyPrice"
+          type="number"
+          defaultValue={equipment?.monthlyPrice ?? ""}
+          placeholder="149"
         />
         <div>
           <label className="block text-sm font-medium text-neutral-700">Status</label>

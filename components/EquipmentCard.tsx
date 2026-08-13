@@ -19,6 +19,7 @@ export type EquipmentCardData = {
   condition: string;
   cashPrice: number;
   financePrice: number | null;
+  monthlyPrice: number | null;
   status: string;
   photos: { url: string }[];
 };
@@ -69,8 +70,15 @@ export function EquipmentCard({ equipment }: { equipment: EquipmentCardData }) {
 
           <div className="mt-3 flex items-end justify-between border-t border-white/10 pt-3">
             <div>
-              <p className="text-xs uppercase tracking-wide text-white/40">Cash Price</p>
-              <p className="font-display text-xl font-bold text-brand-red">{money(equipment.cashPrice)}</p>
+              <p className="text-xs uppercase tracking-wide text-white/40">Starting At</p>
+              {equipment.monthlyPrice != null ? (
+                <p className="font-display text-xl font-bold text-brand-red">
+                  {money(equipment.monthlyPrice)}
+                  <span className="text-sm font-semibold">/mo</span>
+                </p>
+              ) : (
+                <p className="font-display text-xl font-bold text-brand-red">{money(equipment.cashPrice)}</p>
+              )}
             </div>
             <div className="rounded-md border border-brand-red/30 bg-brand-red/10 px-3 py-1.5 text-right">
               <p className="font-display text-sm font-bold uppercase leading-tight text-brand-red">

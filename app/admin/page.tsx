@@ -33,7 +33,7 @@ export default async function AdminInventoryPage() {
               <th className="px-4 py-3">Item</th>
               <th className="px-4 py-3">Category</th>
               <th className="px-4 py-3">Cash Price</th>
-              <th className="px-4 py-3">Finance Price</th>
+              <th className="px-4 py-3">Monthly Price</th>
               <th className="px-4 py-3">Status</th>
               <th className="px-4 py-3">Featured</th>
               <th className="px-4 py-3 text-right">Actions</th>
@@ -61,7 +61,7 @@ export default async function AdminInventoryPage() {
                   </span>
                 </td>
                 <td className="px-4 py-3">{money(v.cashPrice)}</td>
-                <td className="px-4 py-3">{v.financePrice ? money(v.financePrice) : "—"}</td>
+                <td className="px-4 py-3">{v.monthlyPrice ? `${money(v.monthlyPrice)}/mo` : "—"}</td>
                 <td className="px-4 py-3">
                   <StatusSelect equipmentId={v.id} status={v.status as "available" | "pending" | "sold"} />
                 </td>

@@ -26,6 +26,7 @@ const equipmentSchema = z.object({
   description: z.string().trim().optional(),
   cashPrice: z.coerce.number().int().min(0),
   financePrice: z.coerce.number().int().min(0).optional(),
+  monthlyPrice: z.coerce.number().int().min(0).optional(),
   status: z.enum(["available", "pending", "sold"]),
   featured: z.coerce.boolean().optional(),
 });
@@ -57,6 +58,7 @@ function parseEquipmentForm(formData: FormData) {
     description: formData.get("description") || undefined,
     cashPrice: formData.get("cashPrice"),
     financePrice: formData.get("financePrice") || undefined,
+    monthlyPrice: formData.get("monthlyPrice") || undefined,
     status: formData.get("status") ?? "available",
     featured: formData.get("featured") === "on",
   };

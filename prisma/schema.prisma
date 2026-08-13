@@ -31,6 +31,7 @@ model Equipment {
 
   cashPrice     Int // whole dollars
   financePrice  Int? // whole dollars, null = finance not offered on this unit
+  monthlyPrice  Int? // whole dollars/month, shown as "Starting at $X/mo" on listings
 
   status        String   @default("available") // "available" | "pending" | "sold"
   featured      Boolean  @default(false)
