@@ -17,20 +17,12 @@ export default async function AdminInventoryPage() {
     <div>
       <div className="mb-6 flex items-center justify-between">
         <h1 className="text-2xl font-bold text-neutral-900">Inventory ({items.length})</h1>
-        <div className="flex gap-3">
-          <Link
-            href="/admin/equipment/new?kind=vehicle"
-            className="rounded-md border border-red-600 px-4 py-2 text-sm font-semibold text-red-600 hover:bg-red-50"
-          >
-            + Add Vehicle
-          </Link>
-          <Link
-            href="/admin/equipment/new?kind=equipment"
-            className="rounded-md bg-red-600 px-4 py-2 text-sm font-semibold text-white hover:bg-red-700"
-          >
-            + Add Equipment
-          </Link>
-        </div>
+        <Link
+          href="/admin/equipment/new"
+          className="rounded-md bg-red-600 px-4 py-2 text-sm font-semibold text-white hover:bg-red-700"
+        >
+          + Add Equipment
+        </Link>
       </div>
 
       <div className="overflow-hidden rounded-lg border border-neutral-200 bg-white">

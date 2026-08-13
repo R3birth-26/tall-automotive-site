@@ -14,9 +14,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Tall Automotive | Trucks, Vans & Bad Boy Equipment – Hampstead, NH",
+  title: "Tall Equipment and Machinery | Bad Boy Mowers & Tractors – Hampstead, NH",
   description:
-    "Tall Automotive in Hampstead, NH sells trucks, vans, and Bad Boy Mowers equipment — mowers, tractors, and handheld equipment — with cash and finance pricing, and services everything that comes through the door.",
+    "Tall Equipment and Machinery in Hampstead, NH sells and services Bad Boy Mowers, tractors, and handheld equipment — with cash and 0%-financing pricing on every listing.",
 };
 
 export default function RootLayout({

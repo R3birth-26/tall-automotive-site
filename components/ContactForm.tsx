@@ -2,7 +2,7 @@
 
 import { useState, type FormEvent } from "react";
 
-// TODO: replace with Tall Automotive's own Web3Forms access key (web3forms.com).
+// TODO: replace with Tall Equipment and Machinery's own Web3Forms access key (web3forms.com).
 const WEB3FORMS_KEY = "";
 
 const fieldClass =

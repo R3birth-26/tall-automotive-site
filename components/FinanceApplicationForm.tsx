@@ -2,7 +2,7 @@
 
 import { useState, type FormEvent } from "react";
 
-// TODO: replace with Tall Automotive's own Web3Forms access key (web3forms.com)
+// TODO: replace with Tall Equipment and Machinery's own Web3Forms access key (web3forms.com)
 // so finance applications land in the shop's inbox, not a placeholder. Runs in
 // demo mode (no network call) until this is set.
 const WEB3FORMS_KEY = "";

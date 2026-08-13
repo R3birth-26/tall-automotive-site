@@ -18,7 +18,7 @@ export default function OurStoryPage() {
           Honest, Reliable
         </h1>
         <p className="mx-auto mt-6 max-w-2xl text-lg text-neutral-300">
-          Auto, truck, and equipment sales &amp; service — trusted by our community since 2016.
+          Equipment &amp; machinery sales and service — trusted by our community since 2016.
         </p>
       </section>
 
@@ -30,13 +30,13 @@ export default function OurStoryPage() {
 
           <div className="mt-8 space-y-4 text-neutral-300">
             <p>
-              {business.name} Sales and Service Corp. has proudly served our community since 2016.
-              We are a full-service automotive, truck, and equipment sales and repair facility
-              offering professional in-shop and mobile repair services.
+              {business.name} has proudly served our community since 2016. We are a full-service
+              equipment and machinery sales and repair facility offering professional in-shop
+              service.
             </p>
             <p>
               Our fully equipped shop and highly trained technicians provide quality maintenance
-              and repairs for cars, trucks, trailers, and outdoor power equipment.
+              and repairs for mowers, tractors, and outdoor power equipment.
             </p>
             <p>
               We also sell new and used equipment and are proud to be an Authorized Bad Boy
@@ -44,18 +44,18 @@ export default function OurStoryPage() {
               service, and repairs.
             </p>
             <p>
-              At {business.name} Sales and Service Corp., we are committed to honest service,
-              quality workmanship, and dependable support for every customer.
+              At {business.name}, we are committed to honest service, quality workmanship, and
+              dependable support for every customer.
             </p>
           </div>
 
           <blockquote className="mt-10 rounded-xl border border-white/10 bg-white/5 p-8">
             <p className="border-l-4 border-brand-red pl-6 text-xl italic leading-relaxed text-white">
-              &ldquo;At {business.name}, we treat every vehicle and every piece of equipment as if
-              it were our own. We take pride in doing the job right and standing behind our work.
-              More importantly, we treat every customer like family—with honesty, respect, and the
-              kind of service we&apos;d expect ourselves. Thank you for trusting us with your
-              automotive and equipment needs.&rdquo;
+              &ldquo;At {business.name}, we treat every piece of equipment as if it were our own.
+              We take pride in doing the job right and standing behind our work. More importantly,
+              we treat every customer like family—with honesty, respect, and the kind of service
+              we&apos;d expect ourselves. Thank you for trusting us with your equipment
+              needs.&rdquo;
             </p>
             <footer className="mt-4 pl-6 font-display text-sm font-bold uppercase tracking-wide text-brand-red">
               — Josh Tall, Owner

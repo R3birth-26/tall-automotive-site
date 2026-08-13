@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { getSession } from "@/lib/auth";
 import { logoutAction } from "@/lib/actions/auth-actions";
+import { business } from "@/lib/site";
 
 export default async function AdminLayout({ children }: { children: React.ReactNode }) {
   const session = await getSession();
@@ -14,7 +15,7 @@ export default async function AdminLayout({ children }: { children: React.ReactN
       <header className="flex items-center justify-between border-b border-neutral-800 bg-neutral-950 px-6 py-4">
         <div className="flex items-center gap-6">
           <Link href="/admin" className="text-sm font-bold uppercase tracking-wide text-white">
-            Tall Automotive <span className="text-red-500">Admin</span>
+            {business.name} <span className="text-red-500">Admin</span>
           </Link>
           <Link href="/admin" className="text-sm text-neutral-300 hover:text-white">
             Inventory

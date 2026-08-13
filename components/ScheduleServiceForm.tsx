@@ -2,15 +2,15 @@
 
 import { useState, type FormEvent } from "react";
 
-// TODO: replace with Tall Automotive's own Web3Forms access key (web3forms.com)
-// so service requests land in the shop's inbox, not a placeholder. Runs in
-// demo mode (no network call) until this is set.
+// TODO: replace with Tall Equipment and Machinery's own Web3Forms access key
+// (web3forms.com) so service requests land in the shop's inbox, not a
+// placeholder. Runs in demo mode (no network call) until this is set.
 const WEB3FORMS_KEY = "";
 
 export const SERVICE_TYPES = [
-  { title: "Auto & Truck Repair" },
+  { title: "Equipment Repair" },
   { title: "Diagnostics" },
-  { title: "Equipment Service" },
+  { title: "Routine Maintenance" },
   { title: "Parts & Accessories" },
 ] as const;
 
@@ -99,10 +99,10 @@ export function ScheduleServiceForm() {
       </div>
 
       <div>
-        <label className="block text-sm font-medium text-neutral-700">Vehicle or Equipment</label>
+        <label className="block text-sm font-medium text-neutral-700">Equipment</label>
         <input
           name="itemDescription"
-          placeholder="e.g. 2019 RAM 2500, or Bad Boy Mower ELITE 54"
+          placeholder="e.g. Bad Boy Mower ELITE 54"
           className="mt-1 w-full rounded-md border border-neutral-300 px-3 py-2"
         />
       </div>

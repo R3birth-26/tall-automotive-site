@@ -2,7 +2,6 @@ import { notFound } from "next/navigation";
 import { prisma } from "@/lib/prisma";
 import { updateEquipmentAction } from "@/lib/actions/equipment-actions";
 import { EquipmentForm } from "@/components/admin/EquipmentForm";
-import { vehicleCategories } from "@/lib/site";
 
 export default async function EditEquipmentPage({ params }: PageProps<"/admin/equipment/[id]">) {
   const { id } = await params;
@@ -13,7 +12,6 @@ export default async function EditEquipmentPage({ params }: PageProps<"/admin/eq
 
   if (!equipment) notFound();
 
-  const kind = vehicleCategories.includes(equipment.category as never) ? "vehicle" : "equipment";
   const boundAction = updateEquipmentAction.bind(null, equipment.id);
 
   return (
@@ -27,7 +25,6 @@ export default async function EditEquipmentPage({ params }: PageProps<"/admin/eq
           equipment={equipment}
           existingPhotos={equipment.photos}
           submitLabel="Save Changes"
-          kind={kind}
         />
       </div>
     </div>

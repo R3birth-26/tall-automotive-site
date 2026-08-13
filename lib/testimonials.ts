@@ -14,7 +14,7 @@ export const testimonials: Testimonial[] = [
   {
     id: "1",
     name: "Mike T.",
-    role: "Truck Owner",
+    role: "Mower Owner",
     image: "/person-placeholder.svg",
     quote: "Quick, honest, and fair — exactly what you want from a repair shop.",
   },
@@ -30,7 +30,7 @@ export const testimonials: Testimonial[] = [
     name: "Chris B.",
     role: "Local Customer",
     image: "/person-placeholder.svg",
-    quote: "Friendly staff, and my truck was ready faster than expected.",
+    quote: "Friendly staff, and my mower was ready faster than expected.",
   },
   {
     id: "4",
@@ -56,7 +56,7 @@ export const testimonials: Testimonial[] = [
   {
     id: "7",
     name: "Nicole H.",
-    role: "Van Owner",
+    role: "Handheld Equipment Owner",
     image: "/person-placeholder.svg",
     quote: "They service everything, not just what they sell — big plus.",
   },

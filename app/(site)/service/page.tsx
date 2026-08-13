@@ -1,14 +1,14 @@
 import {
   ClipboardCheck,
-  Disc,
-  Droplet,
+  Wrench,
   Droplets,
-  AlignHorizontalJustifyCenter,
-  Wind,
   Cog,
-  Zap,
+  Fuel,
+  Battery,
   Filter,
   RotateCw,
+  Snowflake,
+  Gauge,
 } from "lucide-react";
 import { business } from "@/lib/site";
 import { ScheduleServiceForm } from "@/components/ScheduleServiceForm";
@@ -18,16 +18,16 @@ import { DraftNotice } from "@/components/DraftNotice";
 import { testimonials } from "@/lib/testimonials";
 
 const repairServices = [
-  { label: "Vehicle Checkup / Inspection", icon: ClipboardCheck },
-  { label: "Replace / Adjust Brakes", icon: Disc },
-  { label: "Coolant Flush", icon: Droplet },
-  { label: "Lube, Oil & Filter Change", icon: Droplets },
-  { label: "Front End Alignment", icon: AlignHorizontalJustifyCenter },
-  { label: "Muffler / Exhaust Repair", icon: Wind },
-  { label: "Transmission Flush", icon: Cog },
-  { label: "Electrical Service", icon: Zap },
+  { label: "Equipment Checkup / Inspection", icon: ClipboardCheck },
+  { label: "Blade Sharpening & Balancing", icon: Wrench },
+  { label: "Oil & Filter Change", icon: Droplets },
+  { label: "Belt & Deck Service", icon: Cog },
+  { label: "Hydraulic System Service", icon: Gauge },
+  { label: "Fuel System Service", icon: Fuel },
+  { label: "Electrical & Battery Service", icon: Battery },
   { label: "Filter Replacement", icon: Filter },
-  { label: "Tire Rotation", icon: RotateCw },
+  { label: "Tire & Wheel Service", icon: RotateCw },
+  { label: "Winterization & Storage Prep", icon: Snowflake },
 ];
 
 export default function ServicePage() {
@@ -42,12 +42,12 @@ export default function ServicePage() {
               Hampstead, NH
             </p>
             <h1 className="font-display mt-3 text-5xl font-bold leading-tight text-white sm:text-6xl">
-              Truck &amp; Auto Repair Done Right
+              Equipment &amp; Machinery Service Done Right
             </h1>
             <p className="mt-4 max-w-xl text-lg text-neutral-300">
-              Specializing in maintenance, diagnostics, and repair for trucks and passenger
-              vehicles — but we service everything that comes through the door, whether you
-              bought it from us or not.
+              Specializing in maintenance, diagnostics, and repair for mowers, tractors, and
+              handheld equipment — but we service everything that comes through the door, whether
+              you bought it from us or not.
             </p>
             <div className="mt-8 flex flex-wrap gap-4">
               <a
@@ -79,15 +79,15 @@ export default function ServicePage() {
             Founded 2016
           </p>
           <h2 className="font-display mt-3 text-4xl font-bold text-white sm:text-5xl">
-            Truck &amp; Auto Repair in Hampstead
+            Equipment &amp; Machinery Service in Hampstead
           </h2>
           <p className="mx-auto mt-4 max-w-3xl text-neutral-300">
-            {business.name} is a locally owned and operated truck and auto repair facility based
-            in New Hampshire, built on nearly two decades of hands-on industry experience. We
-            specialize in the maintenance, diagnostics, and repair of trucks and passenger
-            vehicles, delivering reliable, high-quality service with a straightforward,
-            no-nonsense approach. From routine maintenance to complex repairs, every vehicle is
-            handled with precision to keep customers safely and confidently on the road.
+            {business.name} is a locally owned and operated equipment and machinery service
+            facility based in New Hampshire, built on nearly two decades of hands-on industry
+            experience. We specialize in the maintenance, diagnostics, and repair of mowers,
+            tractors, and handheld equipment, delivering reliable, high-quality service with a
+            straightforward, no-nonsense approach. From routine maintenance to complex repairs,
+            every piece of equipment is handled with precision to keep customers up and running.
           </p>
         </div>
 
@@ -113,7 +113,7 @@ export default function ServicePage() {
         </div>
 
         <p className="mx-auto mt-12 max-w-2xl text-center text-neutral-300">
-          Whether you purchased your vehicle from us or not, we are here to help! Call us today
+          Whether you purchased your equipment from us or not, we are here to help! Call us today
           and let us show you how we&apos;ve built a better way.
         </p>
         <div className="mt-6 flex justify-center">

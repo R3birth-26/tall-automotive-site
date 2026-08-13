@@ -2,6 +2,7 @@
 
 import { useActionState } from "react";
 import { loginAction } from "@/lib/actions/auth-actions";
+import { business } from "@/lib/site";
 
 export default function AdminLoginPage() {
   const [state, formAction, pending] = useActionState(loginAction, undefined);
@@ -11,7 +12,7 @@ export default function AdminLoginPage() {
       <div className="w-full max-w-sm rounded-lg border border-neutral-800 bg-neutral-900 p-8 shadow-xl">
         <div className="mb-6 text-center">
           <p className="text-xs font-semibold uppercase tracking-widest text-red-500">
-            Tall Automotive
+            {business.name}
           </p>
           <h1 className="mt-1 text-xl font-bold text-white">Staff Admin Login</h1>
         </div>

@@ -18,12 +18,11 @@ export default async function FinancingPage({ searchParams }: PageProps<"/financ
 
       <div className="space-y-6 text-neutral-700">
         <div className="rounded-lg border border-neutral-200 bg-white p-6">
-          <h2 className="font-display text-xl font-bold text-neutral-900">Two Prices, No Surprises</h2>
+          <h2 className="font-display text-xl font-bold text-neutral-900">0% Interest for 48 Months</h2>
           <p className="mt-2 text-sm">
-            Every truck, van, mower, tractor, and piece of handheld equipment on our site is listed with a{" "}
-            <strong>cash price</strong> and a <strong>finance price</strong>. The cash price is
-            what you pay outright; the finance price reflects the cost when financing through one
-            of our lending partners.
+            Every mower, tractor, and piece of handheld equipment on our site is listed with a{" "}
+            <strong>cash price</strong>, plus 0% interest financing for 48 months on approved
+            credit — so you know exactly where you stand before you ever apply.
           </p>
         </div>
 

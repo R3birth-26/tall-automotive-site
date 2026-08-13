@@ -39,8 +39,8 @@ export default async function HomePage() {
       <section className="relative overflow-hidden bg-brand-charcoal">
         <div className="relative h-[clamp(360px,50vw,640px)] w-full">
           <img
-            src="/images/Tall-Hero.jpg"
-            alt="Tall Automotive shop"
+            src="/images/639190331283734468.webp"
+            alt="Tall Equipment and Machinery"
             className="absolute inset-0 h-full w-full object-cover object-center"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/40 to-transparent" />
@@ -48,15 +48,15 @@ export default async function HomePage() {
             <div className="mx-auto w-full max-w-7xl px-4 sm:px-6">
               <div className="max-w-xl">
                 <p className="font-display text-sm font-semibold uppercase tracking-[0.3em] text-brand-red">
-                  Hampstead, NH — Trucks, Vans, Mowers, Tractors
+                  Hampstead, NH — Mowers, Tractors &amp; Equipment
                 </p>
                 <h1 className="font-display mt-3 text-[clamp(2rem,5vw,3.75rem)] font-bold leading-tight text-white">
-                  Truck &amp; Equipment Sales &amp; Service
+                  Equipment &amp; Machinery Sales and Service
                 </h1>
                 <p className="mt-4 text-base text-neutral-200 sm:text-lg">
-                  Shop trucks, vans, and Bad Boy Mowers, tractors, and handheld equipment — every
-                  unit listed with a cash price and a finance price up front. Plus full-service
-                  repair on everything we sell and more.
+                  Shop Bad Boy Mowers, tractors, and handheld equipment — every unit listed with a
+                  cash price and 0% financing up front. Plus full-service repair on everything we
+                  sell and more.
                 </p>
                 <div className="mt-8 flex flex-wrap gap-4">
                   <a
@@ -83,7 +83,7 @@ export default async function HomePage() {
           <QuickLinkTile title="Inventory" subline="See Inventory" href="/inventory" />
           <QuickLinkTile
             title="Schedule Service"
-            subline="Auto, Truck, Equipment Repair"
+            subline="Equipment & Machinery Repair"
             href="/service"
           />
           <QuickLinkTile
@@ -129,7 +129,7 @@ export default async function HomePage() {
                 Your Local Authorized Bad Boy Dealer
               </h2>
               <p className="mx-auto max-w-xl text-neutral-300 transition-colors duration-300 group-hover:text-gray-200">
-                Look no further than Tall Automotive&apos;s lineup of Bad Boy Mowers, tractors, and
+                Look no further than {business.name}&apos;s lineup of Bad Boy Mowers, tractors, and
                 handheld equipment. Choose from cost-effective daily mowers to heavy-duty tractors
                 built to match your property. Contact us today and we&apos;ll help find the perfect
                 fit for your yard or job site!

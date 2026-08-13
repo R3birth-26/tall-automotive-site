@@ -1,6 +1,7 @@
 import { TeamShowcase } from "@/components/TeamShowcase";
 import { FixedGradientBackground } from "@/components/FixedGradientBackground";
 import { team } from "@/lib/team";
+import { business } from "@/lib/site";
 
 export default function OurTeamPage() {
   return (
@@ -11,7 +12,7 @@ export default function OurTeamPage() {
           Our Team
         </h1>
         <p className="mx-auto mt-3 max-w-xl text-center text-sm text-neutral-400 sm:text-base">
-          The people behind Tall Automotive&apos;s sales and service — click a photo to read
+          The people behind {business.name}&apos;s sales and service — click a photo to read
           their full bio.
         </p>
 

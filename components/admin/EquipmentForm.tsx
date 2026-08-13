@@ -2,7 +2,7 @@
 
 import { useActionState } from "react";
 import type { EquipmentFormState } from "@/lib/actions/equipment-actions";
-import { vehicleCategories, equipmentOnlyCategories } from "@/lib/site";
+import { equipmentCategories } from "@/lib/site";
 
 type ExistingPhoto = { id: string; url: string };
 
@@ -15,7 +15,6 @@ type Equipment = {
   stockNumber: string | null;
   serialNumber: string | null;
   hours: number | null;
-  mileage: number | null;
   condition: string;
   color: string | null;
   transmission: string | null;
@@ -34,17 +33,13 @@ export function EquipmentForm({
   equipment,
   existingPhotos,
   submitLabel,
-  kind,
 }: {
   action: (state: EquipmentFormState, formData: FormData) => Promise<EquipmentFormState>;
   equipment?: Equipment;
   existingPhotos?: ExistingPhoto[];
   submitLabel: string;
-  kind: "vehicle" | "equipment";
 }) {
   const [state, formAction, pending] = useActionState(action, undefined);
-  const isVehicle = kind === "vehicle";
-  const categoryOptions = isVehicle ? vehicleCategories : equipmentOnlyCategories;
 
   return (
     <form action={formAction} className="space-y-8" encType="multipart/form-data">
@@ -55,21 +50,19 @@ export function EquipmentForm({
       )}
 
       <fieldset className="grid grid-cols-1 gap-4 sm:grid-cols-3">
-        <legend className="mb-2 text-sm font-semibold text-neutral-700">
-          {isVehicle ? "Vehicle Info" : "Equipment Info"}
-        </legend>
+        <legend className="mb-2 text-sm font-semibold text-neutral-700">Equipment Info</legend>
         <div>
           <label className="block text-sm font-medium text-neutral-700">Category</label>
           <select
             name="category"
             defaultValue={
-              equipment && categoryOptions.includes(equipment.category as never)
+              equipment && equipmentCategories.includes(equipment.category as never)
                 ? equipment.category
-                : categoryOptions[0]
+                : equipmentCategories[0]
             }
             className="mt-1 w-full rounded-md border border-neutral-300 px-3 py-2"
           >
-            {categoryOptions.map((c) => (
+            {equipmentCategories.map((c) => (
               <option key={c} value={c}>
                 {c}
               </option>
@@ -82,26 +75,18 @@ export function EquipmentForm({
           name="make"
           defaultValue={equipment?.make}
           required
-          placeholder={isVehicle ? "RAM" : "Bad Boy Mowers"}
+          placeholder="Bad Boy Mowers"
         />
         <Field label="Model" name="model" defaultValue={equipment?.model} required />
         <Field
-          label={isVehicle ? "Trim" : "Trim / Deck Size"}
+          label="Trim / Deck Size"
           name="trim"
           defaultValue={equipment?.trim ?? ""}
-          placeholder={isVehicle ? "Laramie 4x4" : "54&quot;"}
+          placeholder="54&quot;"
         />
         <Field label="Stock #" name="stockNumber" defaultValue={equipment?.stockNumber ?? ""} />
-        <Field
-          label={isVehicle ? "VIN" : "Serial #"}
-          name="serialNumber"
-          defaultValue={equipment?.serialNumber ?? ""}
-        />
-        {isVehicle ? (
-          <Field label="Mileage" name="mileage" type="number" defaultValue={equipment?.mileage ?? ""} />
-        ) : (
-          <Field label="Hours" name="hours" type="number" defaultValue={equipment?.hours ?? ""} />
-        )}
+        <Field label="Serial #" name="serialNumber" defaultValue={equipment?.serialNumber ?? ""} />
+        <Field label="Hours" name="hours" type="number" defaultValue={equipment?.hours ?? ""} />
         <div>
           <label className="block text-sm font-medium text-neutral-700">Condition</label>
           <select
@@ -114,28 +99,24 @@ export function EquipmentForm({
           </select>
         </div>
         <Field label="Color" name="color" defaultValue={equipment?.color ?? ""} />
-        {isVehicle && (
-          <>
-            <Field
-              label="Transmission"
-              name="transmission"
-              defaultValue={equipment?.transmission ?? ""}
-              placeholder="Automatic, Manual…"
-            />
-            <Field
-              label="Drivetrain"
-              name="driveType"
-              defaultValue={equipment?.driveType ?? ""}
-              placeholder="4WD, AWD, FWD…"
-            />
-          </>
-        )}
+        <Field
+          label="Transmission"
+          name="transmission"
+          defaultValue={equipment?.transmission ?? ""}
+          placeholder="Hydrostatic, Manual…"
+        />
+        <Field
+          label="Drivetrain"
+          name="driveType"
+          defaultValue={equipment?.driveType ?? ""}
+          placeholder="4WD, 2WD…"
+        />
         <Field label="Fuel Type" name="fuelType" defaultValue={equipment?.fuelType ?? ""} />
         <Field
           label="Engine"
           name="engine"
           defaultValue={equipment?.engine ?? ""}
-          placeholder={isVehicle ? "6.7L Cummins I6" : "24HP Kawasaki"}
+          placeholder="24HP Kawasaki"
         />
       </fieldset>
 

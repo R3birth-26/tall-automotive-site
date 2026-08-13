@@ -1,18 +1,18 @@
 import Link from "next/link";
-import { Truck, CreditCard, Tractor } from "lucide-react";
+import { Wrench, CreditCard, Tractor } from "lucide-react";
 import { Logo } from "@/components/Logo";
 import { HighlightCard } from "@/components/ui/highlight-card";
 import { business, nav } from "@/lib/site";
 
 const infoItems = [
   {
-    title: "Trucks & Vans",
-    body: "We sell trucks and vans, and specialize in repair — but we service everything that comes through the door.",
-    icon: <Truck className="h-8 w-8 text-white" />,
+    title: "Equipment Repair",
+    body: "We service everything that comes through the door — mowers, tractors, and handheld equipment, whether you bought it from us or not.",
+    icon: <Wrench className="h-8 w-8 text-white" />,
   },
   {
-    title: "Financing Available",
-    body: "Every truck, van, mower, tractor, and handheld listing shows both a cash price and a finance price up front.",
+    title: "0% Financing",
+    body: "Every mower, tractor, and handheld listing includes 0% interest financing for 48 months on approved credit.",
     icon: <CreditCard className="h-8 w-8 text-white" />,
   },
   {

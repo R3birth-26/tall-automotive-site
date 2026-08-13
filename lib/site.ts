@@ -1,6 +1,6 @@
 export const business = {
-  name: "Tall Automotive",
-  tagline: "Truck & Equipment Sales & Service — Trucks, Vans, Bad Boy Mowers & Tractors",
+  name: "Tall Equipment and Machinery",
+  tagline: "Equipment & Machinery Sales and Service — Bad Boy Mowers, Tractors & Handheld Equipment",
   phone: "603-489-1754",
   phoneHref: "tel:6034891754",
   smsHref: "sms:6034891754",
@@ -32,8 +32,6 @@ export const nav: NavItem[] = [
     label: "Inventory",
     href: "/inventory",
     children: [
-      { label: "Trucks", href: "/inventory?category=Trucks" },
-      { label: "Vans", href: "/inventory?category=Vans" },
       { label: "Zero Turns", href: "/inventory?category=Mowers" },
       { label: "New Tractors", href: "/inventory?category=Tractors&condition=New" },
       { label: "Used Inventory", href: "/inventory?condition=Used" },
@@ -53,6 +51,4 @@ export const nav: NavItem[] = [
   { label: "Contact", href: "/contact" },
 ];
 
-export const vehicleCategories = ["Trucks", "Vans"] as const;
-export const equipmentOnlyCategories = ["Mowers", "Tractors", "Handhelds"] as const;
-export const equipmentCategories = [...vehicleCategories, ...equipmentOnlyCategories] as const;
+export const equipmentCategories = ["Mowers", "Tractors", "Handhelds"] as const;

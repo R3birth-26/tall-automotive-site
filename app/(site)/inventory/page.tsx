@@ -10,7 +10,6 @@ const SORT_OPTIONS = {
   "year-desc": { label: "Year: New to Old", orderBy: { year: "desc" as const } },
   "year-asc": { label: "Year: Old to New", orderBy: { year: "asc" as const } },
   "hours-asc": { label: "Hours: Low to High", orderBy: { hours: "asc" as const } },
-  "mileage-asc": { label: "Mileage: Low to High", orderBy: { mileage: "asc" as const } },
   newest: { label: "Newest Listings", orderBy: { createdAt: "desc" as const } },
 } as const;
 
