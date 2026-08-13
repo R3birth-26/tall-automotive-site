@@ -51,7 +51,7 @@ export default async function HomePage() {
                   Hampstead, NH — Mowers, Tractors &amp; Equipment
                 </p>
                 <h1 className="font-display mt-3 text-[clamp(2rem,5vw,3.75rem)] font-bold leading-tight text-white">
-                  Equipment &amp; Machinery Sales and Service
+                  Mowers, Tractors &amp; Power Equipment Sales and Service in Hampstead, NH
                 </h1>
                 <p className="mt-4 text-base text-neutral-200 sm:text-lg">
                   Shop Bad Boy Mowers, tractors, and handheld equipment — every unit listed with a
