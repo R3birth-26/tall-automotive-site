@@ -52,17 +52,19 @@ interface HighlightCardProps {
 export const HighlightCard: FC<HighlightCardProps> = ({ title, description, icon }) => {
   return (
     <HighlightCardShell>
-      <div className="relative z-10 flex flex-col items-center p-8 text-center">
-        <div className="relative mb-6">
+      <div className="relative z-10 flex flex-col items-center p-6 text-center">
+        <div className="relative mb-4">
           <div className="absolute inset-0 animate-ping rounded-full border-2 border-brand-red/20" />
           <div className="absolute inset-0 animate-pulse rounded-full border border-white/10" />
 
-          <div className="rounded-full border border-white/20 bg-gradient-to-br from-black/80 to-black/60 p-6 shadow-2xl transition-all duration-500 hover:shadow-brand-red/20 group-hover:scale-110 group-hover:rotate-12">
-            <div className="transition-transform duration-700 group-hover:rotate-180">{icon}</div>
+          <div className="rounded-full border border-white/20 bg-gradient-to-br from-black/80 to-black/60 p-4 shadow-2xl transition-all duration-500 hover:shadow-brand-red/20 group-hover:scale-110 group-hover:rotate-12">
+            <div className="h-6 w-6 transition-transform duration-700 group-hover:rotate-180 [&>svg]:h-6 [&>svg]:w-6">
+              {icon}
+            </div>
           </div>
         </div>
 
-        <h3 className="mb-4 bg-gradient-to-r from-white via-gray-100 to-white bg-clip-text text-3xl font-bold text-transparent transition-transform duration-300 group-hover:scale-105">
+        <h3 className="mb-2 bg-gradient-to-r from-white via-gray-100 to-white bg-clip-text text-xl font-bold text-transparent transition-transform duration-300 group-hover:scale-105">
           {title}
         </h3>
 
@@ -77,12 +79,12 @@ export const HighlightCard: FC<HighlightCardProps> = ({ title, description, icon
           ))}
         </div>
 
-        <div className="mt-6 h-0.5 w-1/3 rounded-full bg-gradient-to-r from-transparent via-brand-red to-transparent transition-all duration-500 group-hover:h-1 group-hover:w-1/2" />
+        <div className="mt-4 h-0.5 w-1/4 rounded-full bg-gradient-to-r from-transparent via-brand-red to-transparent transition-all duration-500 group-hover:h-1 group-hover:w-1/3" />
 
-        <div className="mt-4 flex space-x-2 opacity-60 transition-opacity duration-300 group-hover:opacity-100">
-          <div className="h-2 w-2 animate-bounce rounded-full bg-brand-red" />
-          <div className="h-2 w-2 animate-bounce rounded-full bg-brand-red" style={{ animationDelay: "0.1s" }} />
-          <div className="h-2 w-2 animate-bounce rounded-full bg-brand-red" style={{ animationDelay: "0.2s" }} />
+        <div className="mt-3 flex space-x-2 opacity-60 transition-opacity duration-300 group-hover:opacity-100">
+          <div className="h-1.5 w-1.5 animate-bounce rounded-full bg-brand-red" />
+          <div className="h-1.5 w-1.5 animate-bounce rounded-full bg-brand-red" style={{ animationDelay: "0.1s" }} />
+          <div className="h-1.5 w-1.5 animate-bounce rounded-full bg-brand-red" style={{ animationDelay: "0.2s" }} />
         </div>
       </div>
     </HighlightCardShell>
