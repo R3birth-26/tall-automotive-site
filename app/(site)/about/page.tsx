@@ -21,8 +21,8 @@ export default function OurStoryPage() {
 
       <section className="border-t border-white/10 bg-brand-black px-4 py-16 sm:px-6">
         <div className="mx-auto max-w-6xl">
-          <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-2 lg:gap-16">
-            <div className="overflow-hidden rounded-2xl border border-white/10">
+          <div className="grid grid-cols-1 items-stretch gap-10 lg:grid-cols-2 lg:gap-16">
+            <div className="min-h-[320px] overflow-hidden rounded-2xl border border-white/10 lg:min-h-0">
               <img
                 src="/images/about-tall-group.jpg"
                 alt={`The ${business.name} team`}
