@@ -97,24 +97,33 @@ export default function ServicePage() {
           </p>
         </div>
 
-        <div className="mx-auto mt-12 max-w-5xl">
+        <div className="mx-auto mt-12 max-w-6xl">
           <h3 className="font-display text-center text-2xl font-bold uppercase tracking-wide text-white">
             Come to Us For
           </h3>
-          <div className="mt-6 grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-5">
-            {repairServices.map(({ label, icon: Icon }) => (
-              <div
-                key={label}
-                className="group flex flex-col items-center gap-3 rounded-xl border border-white/10 bg-white/5 p-4 text-center transition hover:border-brand-red/50 hover:bg-white/10"
-              >
-                <div className="flex h-12 w-12 items-center justify-center rounded-full border border-white/15 bg-black/40 transition group-hover:border-brand-red/60">
-                  <Icon className="h-5 w-5 text-white" />
+          <div className="mt-6 grid grid-cols-1 items-stretch gap-8 lg:grid-cols-2 lg:gap-12">
+            <div className="overflow-hidden rounded-2xl border border-white/10">
+              <img
+                src="/images/mower-repair-2.png"
+                alt="Bad Boy mower service and repair"
+                className="h-full w-full object-cover"
+              />
+            </div>
+            <div className="flex flex-col gap-3">
+              {repairServices.map(({ label, icon: Icon }) => (
+                <div
+                  key={label}
+                  className="group flex items-center gap-3 rounded-xl border border-white/10 bg-white/5 p-3 text-left transition hover:border-brand-red/50 hover:bg-white/10"
+                >
+                  <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-white/15 bg-black/40 transition group-hover:border-brand-red/60">
+                    <Icon className="h-4 w-4 text-white" />
+                  </div>
+                  <span className="text-sm font-semibold leading-tight text-neutral-200">
+                    {label}
+                  </span>
                 </div>
-                <span className="text-xs font-semibold leading-tight text-neutral-200">
-                  {label}
-                </span>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
 
