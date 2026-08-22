@@ -20,33 +20,45 @@ export default function OurStoryPage() {
       </section>
 
       <section className="border-t border-white/10 bg-brand-black px-4 py-16 sm:px-6">
-        <div className="mx-auto max-w-3xl">
-          <h2 className="font-display text-center text-4xl font-bold text-white sm:text-5xl">
-            About {business.name}
-          </h2>
+        <div className="mx-auto max-w-6xl">
+          <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-2 lg:gap-16">
+            <div className="overflow-hidden rounded-2xl border border-white/10">
+              <img
+                src="/images/about-tall-group.jpg"
+                alt={`The ${business.name} team`}
+                className="h-full w-full object-cover"
+              />
+            </div>
 
-          <div className="mt-8 space-y-4 text-neutral-300">
-            <p>
-              {business.name} has proudly served our community since 2016. We are a full-service
-              equipment and machinery sales and repair facility offering professional in-shop
-              service.
-            </p>
-            <p>
-              Our fully equipped shop and highly trained technicians provide quality maintenance
-              and repairs for mowers, tractors, and outdoor power equipment.
-            </p>
-            <p>
-              We also sell new and used equipment and are proud to be an Authorized Bad Boy
-              Dealer, offering new Bad Boy zero-turn mowers, tractors, implements, parts, warranty
-              service, and repairs.
-            </p>
-            <p>
-              At {business.name}, we are committed to honest service, quality workmanship, and
-              dependable support for every customer.
-            </p>
+            <div>
+              <h2 className="font-display text-4xl font-bold text-white sm:text-5xl">
+                About {business.name}
+              </h2>
+
+              <div className="mt-8 space-y-4 text-neutral-300">
+                <p>
+                  {business.name} has proudly served our community since 2016. We are a
+                  full-service equipment and machinery sales and repair facility offering
+                  professional in-shop service.
+                </p>
+                <p>
+                  Our fully equipped shop and highly trained technicians provide quality
+                  maintenance and repairs for mowers, tractors, and outdoor power equipment.
+                </p>
+                <p>
+                  We also sell new and used equipment and are proud to be an Authorized Bad Boy
+                  Dealer, offering new Bad Boy zero-turn mowers, tractors, implements, parts,
+                  warranty service, and repairs.
+                </p>
+                <p>
+                  At {business.name}, we are committed to honest service, quality workmanship, and
+                  dependable support for every customer.
+                </p>
+              </div>
+            </div>
           </div>
 
-          <blockquote className="mt-10 rounded-xl border border-white/10 bg-white/5 p-8">
+          <blockquote className="mx-auto mt-14 max-w-3xl rounded-xl border border-white/10 bg-white/5 p-8">
             <p className="border-l-4 border-brand-red pl-6 text-xl italic leading-relaxed text-white">
               &ldquo;At {business.name}, we treat every piece of equipment as if it were our own.
               We take pride in doing the job right and standing behind our work. More importantly,

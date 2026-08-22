@@ -54,7 +54,7 @@ export default async function HomePage() {
                   power equipment. Plus expert sales, parts, and service for Bad Boy Mowers and
                   more.
                 </p>
-                <div className="mt-8 flex flex-wrap gap-4">
+                <div className="mb-6 mt-8 flex flex-wrap gap-4 sm:mb-10">
                   <a
                     href={business.phoneHref}
                     className="rounded-md bg-brand-red px-6 py-3 font-display text-sm font-bold uppercase tracking-wide text-white hover:bg-brand-red-dark"
