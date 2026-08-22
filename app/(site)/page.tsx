@@ -92,6 +92,45 @@ export default async function HomePage() {
         </div>
       </section>
 
+      <section className="bg-brand-black">
+        <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-10 px-4 py-16 sm:px-6 lg:grid-cols-2 lg:gap-16">
+          <div className="overflow-hidden rounded-2xl border border-white/10">
+            <img
+              src="/images/service-shop.jpg"
+              alt="Tall Equipment and Machinery technician servicing a Bad Boy mower"
+              className="h-full w-full object-cover"
+            />
+          </div>
+          <div>
+            <p className="font-display text-sm font-semibold uppercase tracking-[0.3em] text-brand-red">
+              Full-Service Shop
+            </p>
+            <h2 className="font-display mt-3 text-3xl font-bold text-white sm:text-4xl">
+              Real Techs. Real Service.
+            </h2>
+            <p className="mt-4 max-w-md text-neutral-300">
+              Our techs turn wrenches on Bad Boy equipment every day — blade sharpening, hydraulic
+              service, engine work, and everything in between. Whether you bought it from us or
+              not, we&apos;ll keep it running.
+            </p>
+            <div className="mt-8 flex flex-wrap gap-4">
+              <Link
+                href="/service"
+                className="rounded-md bg-brand-red px-6 py-3 font-display text-sm font-bold uppercase tracking-wide text-white hover:bg-brand-red-dark"
+              >
+                Schedule Service
+              </Link>
+              <a
+                href={business.phoneHref}
+                className="rounded-md border border-white/30 px-6 py-3 font-display text-sm font-bold uppercase tracking-wide text-white hover:bg-white/10"
+              >
+                Call {business.phone}
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="relative mx-auto max-w-7xl px-4 py-16 sm:px-6">
         <div className="mb-8 flex items-end justify-between">
           <h2 className="font-display text-3xl font-bold text-white sm:text-4xl">
