@@ -1,8 +1,5 @@
 import Link from "next/link";
-import { DraftNotice } from "@/components/DraftNotice";
-import { TestimonialSection } from "@/components/ui/testimonial-section";
 import { FixedGradientBackground } from "@/components/FixedGradientBackground";
-import { testimonials } from "@/lib/testimonials";
 import { business } from "@/lib/site";
 
 export default function OurStoryPage() {
@@ -84,13 +81,6 @@ export default function OurStoryPage() {
           </div>
         </div>
       </section>
-
-      <div className="mx-auto max-w-3xl px-4 pt-10 sm:px-6">
-        <DraftNotice>
-          Sample testimonials below — swap in real customer reviews before this goes live.
-        </DraftNotice>
-      </div>
-      <TestimonialSection testimonials={testimonials} />
     </div>
   );
 }

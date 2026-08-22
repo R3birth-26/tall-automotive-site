@@ -2,10 +2,7 @@ import Link from "next/link";
 import { prisma } from "@/lib/prisma";
 import { EquipmentCard } from "@/components/EquipmentCard";
 import { HighlightCardShell } from "@/components/ui/highlight-card";
-import { TestimonialSection } from "@/components/ui/testimonial-section";
 import { FixedGradientBackground } from "@/components/FixedGradientBackground";
-import { DraftNotice } from "@/components/DraftNotice";
-import { testimonials } from "@/lib/testimonials";
 import { business } from "@/lib/site";
 
 // Always render on request rather than prerendering at build time — this
@@ -155,13 +152,6 @@ export default async function HomePage() {
           </HighlightCardShell>
         </div>
       </section>
-
-      <div className="mx-auto max-w-7xl px-4 pt-10 sm:px-6">
-        <DraftNotice>
-          Sample testimonials below — swap in real customer reviews before this goes live.
-        </DraftNotice>
-      </div>
-      <TestimonialSection testimonials={testimonials} />
     </div>
   );
 }

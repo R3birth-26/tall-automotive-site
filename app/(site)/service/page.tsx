@@ -13,9 +13,6 @@ import {
 import { business } from "@/lib/site";
 import { ScheduleServiceForm } from "@/components/ScheduleServiceForm";
 import { FixedGradientBackground } from "@/components/FixedGradientBackground";
-import { TestimonialSection } from "@/components/ui/testimonial-section";
-import { DraftNotice } from "@/components/DraftNotice";
-import { testimonials } from "@/lib/testimonials";
 
 const repairServices = [
   { label: "Equipment Checkup / Inspection", icon: ClipboardCheck },
@@ -125,13 +122,6 @@ export default function ServicePage() {
           </a>
         </div>
       </section>
-
-      <div className="mx-auto max-w-5xl px-4 pt-10 sm:px-6">
-        <DraftNotice>
-          Sample testimonials below — swap in real customer reviews before this goes live.
-        </DraftNotice>
-      </div>
-      <TestimonialSection testimonials={testimonials} />
     </div>
   );
 }

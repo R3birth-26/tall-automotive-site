@@ -1,10 +1,7 @@
 import Link from "next/link";
 import { Phone, Mail, MessageCircle, MapPin } from "lucide-react";
 import { ContactForm } from "@/components/ContactForm";
-import { DraftNotice } from "@/components/DraftNotice";
-import { TestimonialSection } from "@/components/ui/testimonial-section";
 import { FixedGradientBackground } from "@/components/FixedGradientBackground";
-import { testimonials } from "@/lib/testimonials";
 import { business } from "@/lib/site";
 
 const email = "tallautomotive@gmail.com";
@@ -94,13 +91,6 @@ export default function ContactPage() {
           </Link>
         </div>
       </section>
-
-      <div className="mx-auto max-w-6xl px-4 pt-10 sm:px-6">
-        <DraftNotice>
-          Sample testimonials below — swap in real customer reviews before this goes live.
-        </DraftNotice>
-      </div>
-      <TestimonialSection testimonials={testimonials} />
     </div>
   );
 }
