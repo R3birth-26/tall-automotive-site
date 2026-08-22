@@ -32,40 +32,49 @@ export default function ServicePage() {
     <div className="relative">
       <FixedGradientBackground />
 
-      <section className="px-4 py-16 sm:px-6">
-        <div className="mx-auto grid max-w-7xl grid-cols-1 gap-12 lg:grid-cols-2 lg:items-center">
-          <div>
-            <p className="font-display text-sm font-semibold uppercase tracking-[0.3em] text-brand-red">
-              Hampstead, NH
-            </p>
-            <h1 className="font-display mt-3 text-5xl font-bold leading-tight text-white sm:text-6xl">
-              Equipment &amp; Machinery Service Done Right
-            </h1>
-            <p className="mt-4 max-w-xl text-lg text-neutral-300">
-              Specializing in maintenance, diagnostics, and repair for mowers, tractors, and
-              handheld equipment — but we service everything that comes through the door, whether
-              you bought it from us or not.
-            </p>
-            <div className="mt-8 flex flex-wrap gap-4">
-              <a
-                href={business.phoneHref}
-                className="rounded-md bg-brand-red px-6 py-3 font-display text-sm font-bold uppercase tracking-wide text-white hover:bg-brand-red-dark"
-              >
-                Call {business.phone}
-              </a>
-              <a
-                href={business.directionsUrl}
-                target="_blank"
-                rel="noreferrer"
-                className="rounded-md border border-white/30 px-6 py-3 font-display text-sm font-bold uppercase tracking-wide text-white hover:bg-white/10"
-              >
-                Get Directions
-              </a>
-            </div>
-          </div>
+      <section className="relative overflow-hidden">
+        <img
+          src="/images/mower-service-hero.jpg"
+          alt="Bad Boy zero-turn mower up on a lift in the Tall Equipment and Machinery shop"
+          className="absolute inset-0 h-full w-full object-cover"
+        />
+        <div className="absolute inset-0 bg-black/75" />
 
-          <div>
-            <ScheduleServiceForm />
+        <div className="relative z-10 px-4 py-16 sm:px-6 sm:py-24">
+          <div className="mx-auto grid max-w-7xl grid-cols-1 gap-12 lg:grid-cols-2 lg:items-center">
+            <div>
+              <p className="font-display text-sm font-semibold uppercase tracking-[0.3em] text-brand-red">
+                Hampstead, NH
+              </p>
+              <h1 className="font-display mt-3 text-5xl font-bold leading-tight text-white sm:text-6xl">
+                Equipment &amp; Machinery Service Done Right
+              </h1>
+              <p className="mt-4 max-w-xl text-lg text-neutral-300">
+                Specializing in maintenance, diagnostics, and repair for mowers, tractors, and
+                handheld equipment — but we service everything that comes through the door,
+                whether you bought it from us or not.
+              </p>
+              <div className="mt-8 flex flex-wrap gap-4">
+                <a
+                  href={business.phoneHref}
+                  className="rounded-md bg-brand-red px-6 py-3 font-display text-sm font-bold uppercase tracking-wide text-white hover:bg-brand-red-dark"
+                >
+                  Call {business.phone}
+                </a>
+                <a
+                  href={business.directionsUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="rounded-md border border-white/30 px-6 py-3 font-display text-sm font-bold uppercase tracking-wide text-white hover:bg-white/10"
+                >
+                  Get Directions
+                </a>
+              </div>
+            </div>
+
+            <div>
+              <ScheduleServiceForm />
+            </div>
           </div>
         </div>
       </section>
