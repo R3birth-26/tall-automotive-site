@@ -19,10 +19,10 @@ export function HighlightCardShell({
   className?: string;
 }) {
   return (
-    <div className="group w-full transform cursor-pointer transition-all duration-500 hover:-rotate-1 hover:scale-105">
+    <div className="group flex h-full w-full transform cursor-pointer transition-all duration-500 hover:-rotate-1 hover:scale-105">
       <Card
         className={cn(
-          "hover:shadow-3xl relative w-full overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-brand-black via-neutral-950 to-brand-black text-white shadow-2xl backdrop-blur-xl hover:border-brand-red/40 hover:shadow-brand-red/10",
+          "hover:shadow-3xl relative flex w-full flex-col overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-brand-black via-neutral-950 to-brand-black text-white shadow-2xl backdrop-blur-xl hover:border-brand-red/40 hover:shadow-brand-red/10",
           className
         )}
       >
@@ -52,7 +52,7 @@ interface HighlightCardProps {
 export const HighlightCard: FC<HighlightCardProps> = ({ title, description, icon }) => {
   return (
     <HighlightCardShell>
-      <div className="relative z-10 flex flex-col items-center p-6 text-center">
+      <div className="relative z-10 flex h-full flex-col items-center p-6 text-center">
         <div className="relative mb-4">
           <div className="absolute inset-0 animate-ping rounded-full border-2 border-brand-red/20" />
           <div className="absolute inset-0 animate-pulse rounded-full border border-white/10" />
@@ -79,7 +79,9 @@ export const HighlightCard: FC<HighlightCardProps> = ({ title, description, icon
           ))}
         </div>
 
-        <div className="mt-4 h-0.5 w-1/4 rounded-full bg-gradient-to-r from-transparent via-brand-red to-transparent transition-all duration-500 group-hover:h-1 group-hover:w-1/3" />
+        <div className="mt-auto pt-4">
+          <div className="mx-auto h-0.5 w-8 rounded-full bg-gradient-to-r from-transparent via-brand-red to-transparent transition-all duration-500 group-hover:h-1 group-hover:w-12" />
+        </div>
 
         <div className="mt-3 flex space-x-2 opacity-60 transition-opacity duration-300 group-hover:opacity-100">
           <div className="h-1.5 w-1.5 animate-bounce rounded-full bg-brand-red" />

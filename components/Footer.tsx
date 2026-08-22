@@ -25,13 +25,13 @@ const infoItems = [
 export function Footer() {
   return (
     <footer className="mt-auto bg-brand-black text-neutral-300">
-      <div className="mx-auto grid max-w-6xl gap-6 px-4 pt-16 sm:px-6 md:grid-cols-3">
+      <div className="mx-auto grid max-w-6xl gap-6 px-4 py-16 sm:px-6 md:grid-cols-3">
         {infoItems.map((item) => (
           <HighlightCard key={item.title} title={item.title} description={[item.body]} icon={item.icon} />
         ))}
       </div>
 
-      <div className="mx-auto grid max-w-7xl gap-8 px-4 py-12 sm:px-6 md:grid-cols-3">
+      <div className="mx-auto grid max-w-7xl gap-8 border-t border-white/10 px-4 py-12 sm:px-6 md:grid-cols-3">
         <div>
           <Logo />
           <p className="mt-4 max-w-xs text-sm text-neutral-400">{business.tagline}</p>
