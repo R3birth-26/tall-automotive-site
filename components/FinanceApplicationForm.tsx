@@ -30,12 +30,16 @@ export function FinanceApplicationForm({ defaultUnit }: { defaultUnit?: string }
     }
   }
 
+  const fieldClass =
+    "mt-1 w-full rounded-md border border-white/15 bg-white/5 px-3 py-2 text-sm text-white placeholder:text-neutral-500 focus:border-brand-red focus:outline-none";
+  const labelClass = "block text-sm font-medium text-neutral-300";
+
   if (status === "sent") {
     return (
-      <div className="rounded-lg border border-green-200 bg-green-50 p-6 text-green-800">
+      <div className="rounded-lg border border-green-500/30 bg-green-500/10 p-6 text-green-300">
         Thanks! We received your application and will follow up shortly.
         {!WEB3FORMS_KEY && (
-          <p className="mt-2 text-xs text-green-700">
+          <p className="mt-2 text-xs text-green-400">
             (Demo mode — connect a Web3Forms key to actually deliver submissions.)
           </p>
         )}
@@ -44,50 +48,45 @@ export function FinanceApplicationForm({ defaultUnit }: { defaultUnit?: string }
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-4 rounded-lg border border-neutral-200 bg-white p-6">
+    <form onSubmit={handleSubmit} className="space-y-4">
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
         <div>
-          <label className="block text-sm font-medium text-neutral-700">Name</label>
-          <input name="name" required className="mt-1 w-full rounded-md border border-neutral-300 px-3 py-2" />
+          <label className={labelClass}>Name</label>
+          <input name="name" required className={fieldClass} />
         </div>
         <div>
-          <label className="block text-sm font-medium text-neutral-700">Phone</label>
-          <input name="phone" required className="mt-1 w-full rounded-md border border-neutral-300 px-3 py-2" />
+          <label className={labelClass}>Phone</label>
+          <input name="phone" required className={fieldClass} />
         </div>
       </div>
 
       <div>
-        <label className="block text-sm font-medium text-neutral-700">Email</label>
-        <input
-          type="email"
-          name="email"
-          required
-          className="mt-1 w-full rounded-md border border-neutral-300 px-3 py-2"
-        />
+        <label className={labelClass}>Email</label>
+        <input type="email" name="email" required className={fieldClass} />
       </div>
 
       <div>
-        <label className="block text-sm font-medium text-neutral-700">Unit of Interest</label>
+        <label className={labelClass}>Unit of Interest</label>
         <input
           name="unit"
           defaultValue={defaultUnit}
           placeholder="e.g. 2026 Bad Boy Mowers ZT Elite"
-          className="mt-1 w-full rounded-md border border-neutral-300 px-3 py-2"
+          className={fieldClass}
         />
       </div>
 
       <div>
-        <label className="block text-sm font-medium text-neutral-700">Additional Details</label>
+        <label className={labelClass}>Additional Details</label>
         <textarea
           name="message"
           rows={4}
-          className="mt-1 w-full rounded-md border border-neutral-300 px-3 py-2"
+          className={fieldClass}
           placeholder="Desired down payment, trade-in, or anything else we should know"
         />
       </div>
 
       {status === "error" && (
-        <p className="text-sm text-red-600">Something went wrong — please call us instead.</p>
+        <p className="text-sm text-red-400">Something went wrong — please call us instead.</p>
       )}
 
       <button

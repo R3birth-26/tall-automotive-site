@@ -16,9 +16,7 @@ export const business = {
     { days: "Sunday", time: "Closed" },
   ],
   directionsUrl: "https://maps.google.com/?q=285+Stage+Rd+Hampstead+NH+03841",
-  // TODO: replace with the real 0%-for-48-months financing application link
-  // once provided — falls back to the on-site /financing page until then.
-  financeApplicationUrl: "",
+  financeApplicationUrl: "https://prequalify.sheffieldfinancial.com/Apply/Landing?source=web&dealer=62317",
 };
 
 export type NavItem = {
