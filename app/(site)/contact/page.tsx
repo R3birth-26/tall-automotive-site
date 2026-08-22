@@ -37,7 +37,7 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <section className="border-t border-white/10 bg-brand-black px-4 py-16 sm:px-6">
+      <section className="relative border-t border-white/10 px-4 py-16 sm:px-6">
         <div className="mx-auto grid max-w-6xl grid-cols-1 gap-8 lg:grid-cols-2">
           <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-8">
             <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-transparent via-brand-red to-transparent" />

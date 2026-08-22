@@ -91,7 +91,7 @@ export default async function HomePage() {
         </div>
       </section>
 
-      <section className="bg-brand-black">
+      <section className="relative">
         <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-10 px-4 py-16 sm:px-6 lg:grid-cols-2 lg:gap-16">
           <div className="overflow-hidden rounded-2xl border border-white/10">
             <img
@@ -151,7 +151,7 @@ export default async function HomePage() {
         )}
       </section>
 
-      <section className="bg-brand-black px-4 py-16 sm:px-6">
+      <section className="relative px-4 py-16 sm:px-6">
         <div className="mx-auto max-w-6xl">
           <div className="group relative overflow-hidden rounded-2xl border border-white/10 shadow-2xl">
             <img
