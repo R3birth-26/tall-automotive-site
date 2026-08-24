@@ -1,6 +1,7 @@
 "use client";
 
 import { FC, ReactNode } from "react";
+import Link from "next/link";
 import { Card } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 
@@ -47,9 +48,10 @@ interface HighlightCardProps {
   title: string;
   description: string[];
   icon?: ReactNode;
+  cta?: { label: string; href: string };
 }
 
-export const HighlightCard: FC<HighlightCardProps> = ({ title, description, icon }) => {
+export const HighlightCard: FC<HighlightCardProps> = ({ title, description, icon, cta }) => {
   return (
     <HighlightCardShell>
       <div className="relative z-10 flex h-full flex-col items-center p-6 text-center">
@@ -83,11 +85,20 @@ export const HighlightCard: FC<HighlightCardProps> = ({ title, description, icon
           <div className="mx-auto h-0.5 w-8 rounded-full bg-gradient-to-r from-transparent via-brand-red to-transparent transition-all duration-500 group-hover:h-1 group-hover:w-12" />
         </div>
 
-        <div className="mt-3 flex space-x-2 opacity-60 transition-opacity duration-300 group-hover:opacity-100">
-          <div className="h-1.5 w-1.5 animate-bounce rounded-full bg-brand-red" />
-          <div className="h-1.5 w-1.5 animate-bounce rounded-full bg-brand-red" style={{ animationDelay: "0.1s" }} />
-          <div className="h-1.5 w-1.5 animate-bounce rounded-full bg-brand-red" style={{ animationDelay: "0.2s" }} />
-        </div>
+        {cta ? (
+          <Link
+            href={cta.href}
+            className="mt-4 rounded-md bg-brand-red px-5 py-2 font-display text-xs font-bold uppercase tracking-wide text-white transition hover:bg-brand-red-dark"
+          >
+            {cta.label}
+          </Link>
+        ) : (
+          <div className="mt-3 flex space-x-2 opacity-60 transition-opacity duration-300 group-hover:opacity-100">
+            <div className="h-1.5 w-1.5 animate-bounce rounded-full bg-brand-red" />
+            <div className="h-1.5 w-1.5 animate-bounce rounded-full bg-brand-red" style={{ animationDelay: "0.1s" }} />
+            <div className="h-1.5 w-1.5 animate-bounce rounded-full bg-brand-red" style={{ animationDelay: "0.2s" }} />
+          </div>
+        )}
       </div>
     </HighlightCardShell>
   );

@@ -6,9 +6,10 @@ import { business, nav } from "@/lib/site";
 
 const infoItems = [
   {
-    title: "Equipment Repair",
-    body: "We service everything that comes through the door — mowers, tractors, and handheld equipment, whether you bought it from us or not.",
+    title: "Bad Boy Authorized Factory Repair Shop",
+    body: "We can repair Bad Boy equipment in-house — no shipping hassle or waiting months for a costly in-home tech.",
     icon: <Wrench className="h-8 w-8 text-white" />,
+    cta: { label: "Schedule Service", href: "/contact" },
   },
   {
     title: "Easy Financing",
@@ -27,7 +28,13 @@ export function Footer() {
     <footer className="mt-auto bg-brand-black text-neutral-300">
       <div className="mx-auto grid max-w-6xl gap-6 px-4 py-16 sm:px-6 md:grid-cols-3">
         {infoItems.map((item) => (
-          <HighlightCard key={item.title} title={item.title} description={[item.body]} icon={item.icon} />
+          <HighlightCard
+            key={item.title}
+            title={item.title}
+            description={[item.body]}
+            icon={item.icon}
+            cta={item.cta}
+          />
         ))}
       </div>
 
