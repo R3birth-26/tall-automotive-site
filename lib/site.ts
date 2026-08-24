@@ -36,7 +36,7 @@ export const nav: NavItem[] = [
       { label: "Shop Handhelds", href: "/inventory?category=Handhelds" },
     ],
   },
-  { label: "Service", href: "/service" },
+  { label: "Schedule Service", href: "/service" },
   { label: "Financing", href: "/financing" },
   { label: "Contact", href: "/contact" },
 ];
