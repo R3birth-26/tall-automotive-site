@@ -95,8 +95,8 @@ export default async function HomePage() {
         <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-10 px-4 py-16 sm:px-6 lg:grid-cols-2 lg:gap-16">
           <div className="overflow-hidden rounded-2xl border border-white/10">
             <img
-              src="/images/service-shop.jpg"
-              alt="Tall Equipment and Machinery technician servicing a Bad Boy mower"
+              src="/images/mower-repair-2.png"
+              alt="Bad Boy zero-turn mower up on a lift in the Tall Equipment and Machinery shop"
               className="h-full w-full object-cover"
             />
           </div>

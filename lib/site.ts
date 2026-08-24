@@ -27,25 +27,17 @@ export type NavItem = {
 
 export const nav: NavItem[] = [
   {
-    label: "Inventory",
+    label: "Our Store",
     href: "/inventory",
     children: [
-      { label: "Zero Turns", href: "/inventory?category=Mowers" },
-      { label: "New Tractors", href: "/inventory?category=Tractors&condition=New" },
-      { label: "Used Inventory", href: "/inventory?condition=Used" },
+      { label: "Shop All", href: "/inventory" },
+      { label: "Shop Mowers", href: "/inventory?category=Mowers" },
+      { label: "Shop Tractors", href: "/inventory?category=Tractors" },
+      { label: "Shop Handhelds", href: "/inventory?category=Handhelds" },
     ],
   },
   { label: "Service", href: "/service" },
-  {
-    label: "About Us",
-    href: "/about",
-    children: [
-      { label: "Our Story", href: "/about" },
-      { label: "Our Team", href: "/about/team" },
-      { label: "Finance Info", href: "/financing" },
-      { label: "Privacy Policy", href: "/privacy" },
-    ],
-  },
+  { label: "Financing", href: "/financing" },
   { label: "Contact", href: "/contact" },
 ];
 

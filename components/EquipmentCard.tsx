@@ -80,11 +80,10 @@ export function EquipmentCard({ equipment }: { equipment: EquipmentCardData }) {
                 <p className="font-display text-xl font-bold text-brand-red">{money(equipment.cashPrice)}</p>
               )}
             </div>
-            <div className="rounded-md border border-brand-red/30 bg-brand-red/10 px-3 py-1.5 text-right">
+            <div className="flex items-center rounded-md border border-brand-red/30 bg-brand-red/10 px-3 py-2">
               <p className="font-display text-sm font-bold uppercase leading-tight text-brand-red">
-                0% Interest
+                Easy Financing
               </p>
-              <p className="text-[11px] font-semibold uppercase tracking-wide text-white/60">48 Months</p>
             </div>
           </div>
         </div>

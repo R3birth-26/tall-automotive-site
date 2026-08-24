@@ -68,8 +68,8 @@ export default async function EquipmentDetailPage({ params }: PageProps<"/invent
               </div>
               <div>
                 <p className="text-xs uppercase tracking-wide text-white/40">Financing</p>
-                <p className="font-display text-2xl font-bold text-white">0% Interest</p>
-                <p className="text-sm font-semibold text-white/60">for 48 Months</p>
+                <p className="font-display text-2xl font-bold text-white">Easy Financing</p>
+                <p className="text-sm font-semibold text-white/60">Through Sheffield Financial</p>
               </div>
             </div>
 
@@ -92,7 +92,7 @@ export default async function EquipmentDetailPage({ params }: PageProps<"/invent
                 rel={business.financeApplicationUrl ? "noreferrer" : undefined}
                 className="rounded-md border border-brand-red/40 bg-brand-red/10 px-5 py-3 font-display text-sm font-bold uppercase tracking-wide text-brand-red hover:bg-brand-red/20"
               >
-                Apply — 0% for 48 Mo
+                Apply for Financing
               </a>
             </div>
 

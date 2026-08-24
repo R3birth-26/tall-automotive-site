@@ -11,8 +11,8 @@ const infoItems = [
     icon: <Wrench className="h-8 w-8 text-white" />,
   },
   {
-    title: "0% Financing",
-    body: "Every mower, tractor, and handheld listing includes 0% interest financing for 48 months on approved credit.",
+    title: "Easy Financing",
+    body: "Every mower, tractor, and handheld listing qualifies for easy financing through our partner, Sheffield Financial.",
     icon: <CreditCard className="h-8 w-8 text-white" />,
   },
   {
@@ -82,6 +82,11 @@ export function Footer() {
         <p className="mt-1">
           {business.name} &middot; {business.address.line1}, {business.address.city},{" "}
           {business.address.state} {business.address.zip} &middot; {business.phone}
+        </p>
+        <p className="mt-1">
+          <Link href="/privacy" className="hover:text-brand-red hover:underline">
+            Privacy Policy
+          </Link>
         </p>
         <p className="mt-1">
           Another Site Made With ❤️ By{" "}

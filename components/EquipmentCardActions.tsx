@@ -56,7 +56,7 @@ export function EquipmentCardActions({
             className={actionButton}
           >
             <CreditCard className="h-3.5 w-3.5" />
-            Apply — 0% APR
+            Apply for Financing
           </a>
         ) : (
           <Link href={financeHref} onClick={(e) => e.stopPropagation()} className={actionButton}>

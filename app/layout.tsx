@@ -16,7 +16,7 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "Tall Equipment and Machinery | Bad Boy Mowers & Tractors – Hampstead, NH",
   description:
-    "Tall Equipment and Machinery in Hampstead, NH sells and services Bad Boy Mowers, tractors, and handheld equipment — with cash and 0%-financing pricing on every listing.",
+    "Tall Equipment and Machinery in Hampstead, NH sells and services Bad Boy Mowers, tractors, and handheld equipment — with cash pricing and easy financing on every listing.",
 };
 
 export default function RootLayout({

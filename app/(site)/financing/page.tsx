@@ -36,13 +36,13 @@ export default async function FinancingPage({ searchParams }: PageProps<"/financ
             Financing Made Simple
           </p>
           <h1 className="font-display mt-3 text-5xl font-bold leading-tight text-white sm:text-6xl">
-            0% Interest for 48 Months
+            Easy Financing, Made Simple
           </h1>
           <p className="mt-4 text-lg text-neutral-300">
             Every mower, tractor, and piece of handheld equipment on our site is listed with a
-            straightforward cash price, plus 0% interest financing for 48 months on approved
-            credit through our partner, Sheffield Financial — so you know exactly where you
-            stand before you ever apply.
+            straightforward cash price, plus easy financing on approved credit through our
+            partner, Sheffield Financial — so you know exactly where you stand before you ever
+            apply.
           </p>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
             <a
