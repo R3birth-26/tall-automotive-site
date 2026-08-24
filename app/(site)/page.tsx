@@ -80,7 +80,7 @@ export default async function HomePage() {
           <QuickLinkTile
             title="Schedule Service"
             subline="Equipment & Machinery Repair"
-            href="/service"
+            href="/contact"
           />
           <QuickLinkTile
             title="Get Directions"
@@ -114,7 +114,7 @@ export default async function HomePage() {
             </p>
             <div className="mt-8 flex flex-wrap gap-4">
               <Link
-                href="/service"
+                href="/contact"
                 className="rounded-md bg-brand-red px-6 py-3 font-display text-sm font-bold uppercase tracking-wide text-white hover:bg-brand-red-dark"
               >
                 Schedule Service
