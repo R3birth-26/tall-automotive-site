@@ -1,3 +1,5 @@
+export const siteUrl = "https://tallequipment.com";
+
 export const business = {
   name: "Tall Equipment and Machinery",
   tagline: "Equipment & Machinery Sales and Service — Bad Boy Mowers, Tractors & Handheld Equipment",

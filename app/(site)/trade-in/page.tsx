@@ -1,5 +1,12 @@
+import type { Metadata } from "next";
 import { TradeInForm } from "@/components/TradeInForm";
 import { business } from "@/lib/site";
+
+export const metadata: Metadata = {
+  title: "Trade-In Quote",
+  description: `Get a trade-in quote toward your next purchase at ${business.name} in ${business.address.city}, ${business.address.state}.`,
+  alternates: { canonical: "/trade-in" },
+};
 
 export default function TradeInPage() {
   return (

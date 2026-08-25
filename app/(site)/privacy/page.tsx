@@ -1,5 +1,12 @@
+import type { Metadata } from "next";
 import { DraftNotice } from "@/components/DraftNotice";
 import { business } from "@/lib/site";
+
+export const metadata: Metadata = {
+  title: "Privacy Policy",
+  description: `Privacy policy for ${business.name}.`,
+  alternates: { canonical: "/privacy" },
+};
 
 export default function PrivacyPolicyPage() {
   return (

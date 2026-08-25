@@ -1,8 +1,15 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { Phone, Mail, MessageCircle, MapPin } from "lucide-react";
 import { ContactForm } from "@/components/ContactForm";
 import { FixedGradientBackground } from "@/components/FixedGradientBackground";
 import { business } from "@/lib/site";
+
+export const metadata: Metadata = {
+  title: "Contact Us",
+  description: `Get in touch with ${business.name} in ${business.address.city}, ${business.address.state} — call, text, or send a message to schedule service or ask about a piece of equipment.`,
+  alternates: { canonical: "/contact" },
+};
 
 const email = "tallautomotive@gmail.com";
 

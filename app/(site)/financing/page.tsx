@@ -1,8 +1,15 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { ShieldCheck, ClipboardList, Handshake, ArrowRight } from "lucide-react";
 import { FinanceApplicationForm } from "@/components/FinanceApplicationForm";
 import { FixedGradientBackground } from "@/components/FixedGradientBackground";
 import { business } from "@/lib/site";
+
+export const metadata: Metadata = {
+  title: "Financing",
+  description: `Easy financing on every mower, tractor, and handheld listing at ${business.name}, through our partner Sheffield Financial — prequalify online with no impact to your credit score.`,
+  alternates: { canonical: "/financing" },
+};
 
 const steps = [
   {

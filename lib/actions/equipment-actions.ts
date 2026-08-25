@@ -124,7 +124,7 @@ export async function updateEquipmentAction(
 
   revalidatePath("/admin");
   revalidatePath("/inventory");
-  revalidatePath(`/inventory/${id}`);
+  revalidatePath("/inventory/[slug]", "page");
   redirect("/admin");
 }
 

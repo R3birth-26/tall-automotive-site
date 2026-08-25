@@ -1,8 +1,20 @@
+import type { Metadata } from "next";
 import { prisma } from "@/lib/prisma";
 import { EquipmentCard } from "@/components/EquipmentCard";
 import { FixedGradientBackground } from "@/components/FixedGradientBackground";
 import { equipmentCategories } from "@/lib/site";
 import type { Prisma } from "@/app/generated/prisma/client";
+
+export async function generateMetadata({ searchParams }: PageProps<"/inventory">): Promise<Metadata> {
+  const sp = await searchParams;
+  const category = typeof sp.category === "string" ? sp.category : undefined;
+  const title = category ? `Shop ${category}` : "Shop Inventory";
+  const description = category
+    ? `Browse new and used Bad Boy ${category.toLowerCase()} for sale in Hampstead, NH — cash pricing and easy financing on every listing.`
+    : "Browse our full inventory of Bad Boy mowers, tractors, and handheld equipment for sale in Hampstead, NH — cash pricing and easy financing on every listing.";
+
+  return { title, description, alternates: { canonical: "/inventory" } };
+}
 
 const SORT_OPTIONS = {
   "price-asc": { label: "Price: Low to High", orderBy: { cashPrice: "asc" as const } },

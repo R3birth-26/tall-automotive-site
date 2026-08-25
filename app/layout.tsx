@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Oswald, Inter } from "next/font/google";
+import { siteUrl } from "@/lib/site";
 import "./globals.css";
 
 const oswald = Oswald({
@@ -13,10 +14,30 @@ const inter = Inter({
   subsets: ["latin"],
 });
 
+const title = "Tall Equipment and Machinery | Bad Boy Mowers & Tractors – Hampstead, NH";
+const description =
+  "Tall Equipment and Machinery in Hampstead, NH sells and services Bad Boy Mowers, tractors, and handheld equipment — with cash pricing and easy financing on every listing.";
+
 export const metadata: Metadata = {
-  title: "Tall Equipment and Machinery | Bad Boy Mowers & Tractors – Hampstead, NH",
-  description:
-    "Tall Equipment and Machinery in Hampstead, NH sells and services Bad Boy Mowers, tractors, and handheld equipment — with cash pricing and easy financing on every listing.",
+  metadataBase: new URL(siteUrl),
+  title: { default: title, template: `%s | Tall Equipment and Machinery` },
+  description,
+  alternates: { canonical: "/" },
+  openGraph: {
+    title,
+    description,
+    url: siteUrl,
+    siteName: "Tall Equipment and Machinery",
+    locale: "en_US",
+    type: "website",
+    images: [{ url: "/images/mower-service-hero.jpg", width: 1800, height: 1004 }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title,
+    description,
+    images: ["/images/mower-service-hero.jpg"],
+  },
 };
 
 export default function RootLayout({

@@ -1,18 +1,57 @@
-import { notFound } from "next/navigation";
+import type { Metadata } from "next";
+import { notFound, permanentRedirect } from "next/navigation";
 import { prisma } from "@/lib/prisma";
 import { PhotoGallery } from "@/components/PhotoGallery";
 import { money } from "@/components/EquipmentCard";
 import { FixedGradientBackground } from "@/components/FixedGradientBackground";
-import { business } from "@/lib/site";
+import { business, siteUrl } from "@/lib/site";
+import { equipmentSlug, idFromSlug } from "@/lib/slug";
 
-export default async function EquipmentDetailPage({ params }: PageProps<"/inventory/[id]">) {
-  const { id } = await params;
-  const equipment = await prisma.equipment.findUnique({
+async function getEquipment(slug: string) {
+  const id = idFromSlug(slug);
+  return prisma.equipment.findUnique({
     where: { id },
     include: { photos: { orderBy: { order: "asc" } } },
   });
+}
+
+export async function generateMetadata({
+  params,
+}: PageProps<"/inventory/[slug]">): Promise<Metadata> {
+  const { slug } = await params;
+  const equipment = await getEquipment(slug);
+  if (!equipment) return {};
+
+  const title = `${equipment.year ?? ""} ${equipment.make} ${equipment.model}${equipment.trim ? ` ${equipment.trim}` : ""}`.trim();
+  const description =
+    equipment.description ||
+    `${title} — ${equipment.condition} ${equipment.category.toLowerCase()} for sale at ${business.name} in ${business.address.city}, ${business.address.state}. ${money(equipment.cashPrice)} cash price with easy financing available.`;
+  const canonicalSlug = equipmentSlug(equipment);
+  const image = equipment.photos[0]?.url;
+
+  return {
+    title,
+    description,
+    alternates: { canonical: `/inventory/${canonicalSlug}` },
+    openGraph: {
+      title,
+      description,
+      url: `${siteUrl}/inventory/${canonicalSlug}`,
+      images: image ? [{ url: image }] : undefined,
+    },
+  };
+}
+
+export default async function EquipmentDetailPage({ params }: PageProps<"/inventory/[slug]">) {
+  const { slug } = await params;
+  const equipment = await getEquipment(slug);
 
   if (!equipment) notFound();
+
+  const canonicalSlug = equipmentSlug(equipment);
+  if (slug !== canonicalSlug) {
+    permanentRedirect(`/inventory/${canonicalSlug}`);
+  }
 
   const specs: [string, string | number | null][] = [
     ["Category", equipment.category],
@@ -29,9 +68,41 @@ export default async function EquipmentDetailPage({ params }: PageProps<"/invent
   ];
 
   const sold = equipment.status !== "available";
+  const title = `${equipment.year ?? ""} ${equipment.make} ${equipment.model}`.trim();
+
+  const productSchema = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: `${title}${equipment.trim ? ` ${equipment.trim}` : ""}`,
+    description: equipment.description || title,
+    sku: equipment.stockNumber || undefined,
+    brand: { "@type": "Brand", name: equipment.make },
+    category: equipment.category,
+    image: equipment.photos.map((p) => (p.url.startsWith("http") ? p.url : `${siteUrl}${p.url}`)),
+    offers: {
+      "@type": "Offer",
+      url: `${siteUrl}/inventory/${canonicalSlug}`,
+      priceCurrency: "USD",
+      price: equipment.cashPrice,
+      availability:
+        equipment.status === "available"
+          ? "https://schema.org/InStock"
+          : equipment.status === "pending"
+            ? "https://schema.org/LimitedAvailability"
+            : "https://schema.org/OutOfStock",
+      itemCondition:
+        equipment.condition === "New"
+          ? "https://schema.org/NewCondition"
+          : "https://schema.org/UsedCondition",
+    },
+  };
 
   return (
     <div className="relative">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }}
+      />
       <FixedGradientBackground />
       <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6">
         <div className="grid grid-cols-1 gap-10 lg:grid-cols-2">

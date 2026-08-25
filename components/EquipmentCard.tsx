@@ -2,6 +2,7 @@ import Link from "next/link";
 import { GlowCard } from "@/components/ui/glow-card";
 import { EquipmentCardActions } from "@/components/EquipmentCardActions";
 import { business } from "@/lib/site";
+import { equipmentSlug } from "@/lib/slug";
 
 export function money(n: number) {
   return n.toLocaleString("en-US", { style: "currency", currency: "USD", maximumFractionDigits: 0 });
@@ -34,7 +35,7 @@ export function EquipmentCard({ equipment }: { equipment: EquipmentCardData }) {
 
   return (
     <GlowCard className="group">
-      <Link href={`/inventory/${equipment.id}`} className="block">
+      <Link href={`/inventory/${equipmentSlug(equipment)}`} className="block">
         <div className="relative aspect-[4/3] overflow-hidden bg-white/5">
           <img
             src={photo}
