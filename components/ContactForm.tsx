@@ -2,8 +2,7 @@
 
 import { useState, type FormEvent } from "react";
 
-// TODO: replace with Tall Equipment and Machinery's own Web3Forms access key (web3forms.com).
-const WEB3FORMS_KEY = "";
+const WEB3FORMS_KEY = "12cd7669-6de5-4b8e-9429-9fefb2fc5ca8";
 
 const fieldClass =
   "w-full rounded-full border border-white/15 bg-white/5 px-5 py-3 text-sm text-white placeholder:text-neutral-500 focus:border-brand-red focus:outline-none";

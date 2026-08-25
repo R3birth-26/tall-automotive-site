@@ -2,10 +2,7 @@
 
 import { useState, type FormEvent } from "react";
 
-// TODO: replace with Tall Equipment and Machinery's own Web3Forms access key (web3forms.com)
-// so trade-in leads land in the dealership's inbox, not a placeholder. Runs in
-// demo mode (no network call) until this is set.
-const WEB3FORMS_KEY = "";
+const WEB3FORMS_KEY = "12cd7669-6de5-4b8e-9429-9fefb2fc5ca8";
 
 export function TradeInForm() {
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
