@@ -33,42 +33,38 @@ export default async function HomePage() {
     <div>
       <FixedGradientBackground />
       <section className="relative overflow-hidden bg-brand-charcoal">
-        <div className="relative min-h-[clamp(420px,55vw,680px)] w-full">
-          <img
-            src="/images/zt-elite-hero.jpg"
-            alt="Tall Equipment and Machinery"
-            className="absolute inset-0 h-full w-full object-cover object-center sm:object-[25%_center]"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/40 to-transparent" />
-          <div className="absolute inset-0 flex items-center py-16 sm:py-20">
-            <div className="mx-auto w-full max-w-7xl px-4 sm:px-6">
-              <div className="max-w-xl">
-                <p className="font-display text-sm font-semibold uppercase tracking-[0.3em] text-brand-red">
-                  Hampstead, NH — Mowers, Tractors &amp; Equipment
-                </p>
-                <h1 className="font-display mt-3 text-[clamp(2rem,5vw,3.75rem)] font-bold leading-tight text-white">
-                  Mowers, Tractors &amp; Power Equipment Sales and Service in Hampstead, NH
-                </h1>
-                <p className="mt-4 text-base text-neutral-200 sm:text-lg">
-                  Shop residential and commercial mowers, tractors, mini excavators, and handheld
-                  power equipment. Plus expert sales, parts, and service for Bad Boy Mowers and
-                  more.
-                </p>
-                <div className="mb-6 mt-8 flex flex-wrap gap-4 sm:mb-10">
-                  <Link
-                    href="/contact"
-                    className="rounded-md bg-brand-red px-6 py-3 font-display text-sm font-bold uppercase tracking-wide text-white hover:bg-brand-red-dark"
-                  >
-                    Schedule Service
-                  </Link>
-                  <Link
-                    href="/inventory"
-                    className="rounded-md border border-white/30 px-6 py-3 font-display text-sm font-bold uppercase tracking-wide text-white hover:bg-white/10"
-                  >
-                    See Inventory
-                  </Link>
-                </div>
-              </div>
+        <img
+          src="/images/zt-elite-hero.jpg"
+          alt="Tall Equipment and Machinery"
+          className="absolute inset-0 h-full w-full object-cover object-center sm:object-[25%_center]"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/40 to-transparent" />
+        <div className="relative mx-auto w-full max-w-7xl px-4 py-20 sm:px-6 sm:py-24 lg:py-28">
+          <div className="max-w-xl">
+            <p className="font-display text-sm font-semibold uppercase tracking-[0.3em] text-brand-red">
+              Hampstead, NH — Mowers, Tractors &amp; Equipment
+            </p>
+            <h1 className="font-display mt-3 text-3xl font-bold leading-tight text-white sm:text-4xl md:text-5xl lg:text-6xl">
+              Mowers, Tractors &amp; Power Equipment Sales and Service in Hampstead, NH
+            </h1>
+            <p className="mt-4 text-base text-neutral-200 sm:text-lg">
+              Shop residential and commercial mowers, tractors, mini excavators, and handheld
+              power equipment. Plus expert sales, parts, and service for Bad Boy Mowers and
+              more.
+            </p>
+            <div className="mt-8 flex flex-wrap gap-4">
+              <Link
+                href="/contact"
+                className="rounded-md bg-brand-red px-6 py-3 font-display text-sm font-bold uppercase tracking-wide text-white hover:bg-brand-red-dark"
+              >
+                Schedule Service
+              </Link>
+              <Link
+                href="/inventory"
+                className="rounded-md border border-white/30 px-6 py-3 font-display text-sm font-bold uppercase tracking-wide text-white hover:bg-white/10"
+              >
+                See Inventory
+              </Link>
             </div>
           </div>
         </div>
