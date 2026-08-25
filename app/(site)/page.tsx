@@ -55,12 +55,12 @@ export default async function HomePage() {
                   more.
                 </p>
                 <div className="mb-6 mt-8 flex flex-wrap gap-4 sm:mb-10">
-                  <a
-                    href={business.phoneHref}
+                  <Link
+                    href="/contact"
                     className="rounded-md bg-brand-red px-6 py-3 font-display text-sm font-bold uppercase tracking-wide text-white hover:bg-brand-red-dark"
                   >
                     Schedule Service
-                  </a>
+                  </Link>
                   <Link
                     href="/inventory"
                     className="rounded-md border border-white/30 px-6 py-3 font-display text-sm font-bold uppercase tracking-wide text-white hover:bg-white/10"
