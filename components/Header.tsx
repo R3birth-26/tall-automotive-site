@@ -34,8 +34,8 @@ export function Header() {
           </a>
         </div>
       </div>
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6">
-        <Link href="/">
+      <div className="mx-auto flex max-w-7xl flex-col gap-3 px-4 py-3 sm:px-6 md:flex-row md:items-center md:justify-between md:gap-0">
+        <Link href="/" className="flex justify-center md:justify-start">
           <Logo />
         </Link>
         <nav className="hidden items-center gap-7 md:flex">
@@ -80,7 +80,7 @@ export function Header() {
         </nav>
         <Link
           href="/inventory"
-          className="rounded-md bg-brand-red px-4 py-2 text-sm font-bold uppercase tracking-wide text-white hover:bg-brand-red-dark md:hidden"
+          className="w-full rounded-md bg-brand-red px-4 py-2.5 text-center text-sm font-bold uppercase tracking-wide text-white hover:bg-brand-red-dark md:hidden"
         >
           Inventory
         </Link>
