@@ -33,14 +33,14 @@ export default async function HomePage() {
     <div>
       <FixedGradientBackground />
       <section className="relative overflow-hidden bg-brand-charcoal">
-        <div className="relative h-[clamp(360px,50vw,640px)] w-full">
+        <div className="relative min-h-[clamp(420px,55vw,680px)] w-full">
           <img
             src="/images/zt-elite-hero.jpg"
             alt="Tall Equipment and Machinery"
-            className="absolute inset-0 h-full w-full object-cover object-center"
+            className="absolute inset-0 h-full w-full object-cover object-center sm:object-[25%_center]"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/40 to-transparent" />
-          <div className="absolute inset-0 flex items-center">
+          <div className="absolute inset-0 flex items-center py-16 sm:py-20">
             <div className="mx-auto w-full max-w-7xl px-4 sm:px-6">
               <div className="max-w-xl">
                 <p className="font-display text-sm font-semibold uppercase tracking-[0.3em] text-brand-red">
