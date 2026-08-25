@@ -10,7 +10,7 @@ export function Logo({ className = "" }: { className?: string }) {
         <span className="font-display text-lg font-bold uppercase tracking-wide text-white md:text-base">
           Tall Equipment &amp; Machinery
         </span>
-        <span className="font-display text-base font-semibold uppercase tracking-wide text-brand-red md:text-sm">
+        <span className="font-display text-lg font-semibold uppercase tracking-wide text-brand-red md:text-sm">
           Sales and Service
         </span>
       </span>
