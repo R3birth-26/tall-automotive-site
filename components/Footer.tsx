@@ -4,6 +4,12 @@ import { Logo } from "@/components/Logo";
 import { HighlightCard } from "@/components/ui/highlight-card";
 import { business, nav } from "@/lib/site";
 
+const quickLinks = [
+  nav[0],
+  { label: "Schedule Service", href: "/contact" },
+  ...nav.slice(1),
+];
+
 const infoItems = [
   {
     title: "Bad Boy Authorized Factory Repair Shop",
@@ -74,8 +80,8 @@ export function Footer() {
             Quick Links
           </h3>
           <ul className="mt-3 space-y-2 text-sm">
-            {nav.map((item) => (
-              <li key={item.href}>
+            {quickLinks.map((item) => (
+              <li key={item.label}>
                 <Link href={item.href} className="hover:text-brand-red">
                   {item.label}
                 </Link>
