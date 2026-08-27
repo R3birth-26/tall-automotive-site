@@ -63,7 +63,7 @@ export default async function HomePage() {
                 href="/financing"
                 className="rounded-md border border-white/30 px-6 py-3 font-display text-sm font-bold uppercase tracking-wide text-white hover:bg-white/10"
               >
-                Get Easy Financing
+                Get 0% Financing
               </Link>
             </div>
           </div>
