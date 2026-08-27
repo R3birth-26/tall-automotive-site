@@ -54,16 +54,16 @@ export default async function HomePage() {
             </p>
             <div className="mt-8 flex flex-wrap gap-4">
               <Link
-                href="/contact"
+                href="/inventory"
                 className="rounded-md bg-brand-red px-6 py-3 font-display text-sm font-bold uppercase tracking-wide text-white hover:bg-brand-red-dark"
               >
-                Schedule Service
+                Shop Now
               </Link>
               <Link
-                href="/inventory"
+                href="/financing"
                 className="rounded-md border border-white/30 px-6 py-3 font-display text-sm font-bold uppercase tracking-wide text-white hover:bg-white/10"
               >
-                See Inventory
+                Get Easy Financing
               </Link>
             </div>
           </div>
