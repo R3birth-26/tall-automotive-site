@@ -21,11 +21,13 @@ const infoItems = [
     title: "Easy Financing",
     body: "Every mower, tractor, and handheld listing qualifies for easy financing through our partner, Sheffield Financial.",
     icon: <CreditCard className="h-8 w-8 text-white" />,
+    cta: { label: "Apply & Get Approved", href: business.financeApplicationUrl, external: true },
   },
   {
     title: "Bad Boy Equipment",
     body: "Authorized Bad Boy dealer for mowers, tractors, and handheld equipment — sales, parts, and service.",
     icon: <Tractor className="h-8 w-8 text-white" />,
+    cta: { label: "Shop Now", href: "/inventory" },
   },
 ];
 

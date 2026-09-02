@@ -48,7 +48,7 @@ interface HighlightCardProps {
   title: string;
   description: string[];
   icon?: ReactNode;
-  cta?: { label: string; href: string };
+  cta?: { label: string; href: string; external?: boolean };
 }
 
 export const HighlightCard: FC<HighlightCardProps> = ({ title, description, icon, cta }) => {
@@ -86,12 +86,23 @@ export const HighlightCard: FC<HighlightCardProps> = ({ title, description, icon
         </div>
 
         {cta ? (
-          <Link
-            href={cta.href}
-            className="mt-4 rounded-md bg-brand-red px-5 py-2 font-display text-xs font-bold uppercase tracking-wide text-white transition hover:bg-brand-red-dark"
-          >
-            {cta.label}
-          </Link>
+          cta.external ? (
+            <a
+              href={cta.href}
+              target="_blank"
+              rel="noreferrer"
+              className="mt-4 rounded-md bg-brand-red px-5 py-2 font-display text-xs font-bold uppercase tracking-wide text-white transition hover:bg-brand-red-dark"
+            >
+              {cta.label}
+            </a>
+          ) : (
+            <Link
+              href={cta.href}
+              className="mt-4 rounded-md bg-brand-red px-5 py-2 font-display text-xs font-bold uppercase tracking-wide text-white transition hover:bg-brand-red-dark"
+            >
+              {cta.label}
+            </Link>
+          )
         ) : (
           <div className="mt-3 flex space-x-2 opacity-60 transition-opacity duration-300 group-hover:opacity-100">
             <div className="h-1.5 w-1.5 animate-bounce rounded-full bg-brand-red" />
