@@ -77,8 +77,10 @@ export function EquipmentCard({ equipment }: { equipment: EquipmentCardData }) {
                   {money(equipment.monthlyPrice)}
                   <span className="text-sm font-semibold">/mo</span>
                 </p>
-              ) : (
+              ) : equipment.cashPrice > 0 ? (
                 <p className="font-display text-xl font-bold text-brand-red">{money(equipment.cashPrice)}</p>
+              ) : (
+                <p className="font-display text-lg font-bold text-brand-red">Call for Price</p>
               )}
             </div>
             <div className="flex items-center rounded-md border border-brand-red/30 bg-brand-red/10 px-3 py-2">

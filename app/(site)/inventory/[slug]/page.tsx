@@ -83,7 +83,9 @@ export default async function EquipmentDetailPage({ params }: PageProps<"/invent
       "@type": "Offer",
       url: `${siteUrl}/inventory/${canonicalSlug}`,
       priceCurrency: "USD",
-      price: equipment.cashPrice,
+      // cashPrice of 0 means "call for price" — schema.org has no clean way
+      // to express that, so omit price entirely rather than claim it's free.
+      ...(equipment.cashPrice > 0 ? { price: equipment.cashPrice } : {}),
       availability:
         equipment.status === "available"
           ? "https://schema.org/InStock"
@@ -131,10 +133,14 @@ export default async function EquipmentDetailPage({ params }: PageProps<"/invent
                       {money(equipment.monthlyPrice)}
                       <span className="text-lg font-semibold">/mo</span>
                     </p>
-                    <p className="mt-1 text-xs text-white/40">{money(equipment.cashPrice)} cash price</p>
+                    {equipment.cashPrice > 0 && (
+                      <p className="mt-1 text-xs text-white/40">{money(equipment.cashPrice)} cash price</p>
+                    )}
                   </>
-                ) : (
+                ) : equipment.cashPrice > 0 ? (
                   <p className="font-display text-3xl font-bold text-brand-red">{money(equipment.cashPrice)}</p>
+                ) : (
+                  <p className="font-display text-2xl font-bold text-brand-red">Call for Price</p>
                 )}
               </div>
               <div>
