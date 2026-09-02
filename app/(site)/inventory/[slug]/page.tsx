@@ -23,9 +23,11 @@ export async function generateMetadata({
   if (!equipment) return {};
 
   const title = `${equipment.year ?? ""} ${equipment.make} ${equipment.model}${equipment.trim ? ` ${equipment.trim}` : ""}`.trim();
+  const priceLine =
+    equipment.monthlyPrice != null ? `Starting at ${money(equipment.monthlyPrice)}/mo` : "Call for price";
   const description =
     equipment.description ||
-    `${title} — ${equipment.condition} ${equipment.category.toLowerCase()} for sale at ${business.name} in ${business.address.city}, ${business.address.state}. ${money(equipment.cashPrice)} cash price with easy financing available.`;
+    `${title} — ${equipment.condition} ${equipment.category.toLowerCase()} for sale at ${business.name} in ${business.address.city}, ${business.address.state}. ${priceLine} with easy financing available.`;
   const canonicalSlug = equipmentSlug(equipment);
   const image = equipment.photos[0]?.url;
 
@@ -82,10 +84,9 @@ export default async function EquipmentDetailPage({ params }: PageProps<"/invent
     offers: {
       "@type": "Offer",
       url: `${siteUrl}/inventory/${canonicalSlug}`,
-      priceCurrency: "USD",
-      // cashPrice of 0 means "call for price" — schema.org has no clean way
-      // to express that, so omit price entirely rather than claim it's free.
-      ...(equipment.cashPrice > 0 ? { price: equipment.cashPrice } : {}),
+      // Cash/finance price is never published — call for price. Schema.org
+      // has no clean way to express that, so price/priceCurrency are omitted
+      // rather than publishing a number.
       availability:
         equipment.status === "available"
           ? "https://schema.org/InStock"
@@ -128,17 +129,10 @@ export default async function EquipmentDetailPage({ params }: PageProps<"/invent
               <div>
                 <p className="text-xs uppercase tracking-wide text-white/40">Starting At</p>
                 {equipment.monthlyPrice != null ? (
-                  <>
-                    <p className="font-display text-3xl font-bold text-brand-red">
-                      {money(equipment.monthlyPrice)}
-                      <span className="text-lg font-semibold">/mo</span>
-                    </p>
-                    {equipment.cashPrice > 0 && (
-                      <p className="mt-1 text-xs text-white/40">{money(equipment.cashPrice)} cash price</p>
-                    )}
-                  </>
-                ) : equipment.cashPrice > 0 ? (
-                  <p className="font-display text-3xl font-bold text-brand-red">{money(equipment.cashPrice)}</p>
+                  <p className="font-display text-3xl font-bold text-brand-red">
+                    {money(equipment.monthlyPrice)}
+                    <span className="text-lg font-semibold">/mo</span>
+                  </p>
                 ) : (
                   <p className="font-display text-2xl font-bold text-brand-red">Call for Price</p>
                 )}
