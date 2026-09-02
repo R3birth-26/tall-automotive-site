@@ -6,6 +6,7 @@ export const business = {
   phone: "603-489-1754",
   phoneHref: "tel:6034891754",
   smsHref: "sms:6034891754",
+  email: "TallEquipment@gmail.com",
   address: {
     line1: "285 Stage Rd",
     city: "Hampstead",

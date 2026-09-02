@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "/contact" },
 };
 
-const email = "tallautomotive@gmail.com";
+const email = business.email;
 
 const mapSrc = `https://maps.google.com/maps?q=${encodeURIComponent(
   `${business.address.line1}, ${business.address.city}, ${business.address.state} ${business.address.zip}`

@@ -13,6 +13,7 @@ export function LocalBusinessSchema() {
     url: siteUrl,
     image: `${siteUrl}/images/tem-logo.png`,
     telephone: business.phone,
+    email: business.email,
     priceRange: "$$",
     address: {
       "@type": "PostalAddress",
