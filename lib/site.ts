@@ -3,9 +3,9 @@ export const siteUrl = "https://tallequipment.com";
 export const business = {
   name: "Tall Equipment and Machinery",
   tagline: "Equipment & Machinery Sales and Service — Bad Boy Mowers, Tractors & Handheld Equipment",
-  phone: "603-489-7580",
-  phoneHref: "tel:6034897580",
-  smsHref: "sms:6034897580",
+  phone: "603-489-1754",
+  phoneHref: "tel:6034891754",
+  smsHref: "sms:6034891754",
   address: {
     line1: "285 Stage Rd",
     city: "Hampstead",
