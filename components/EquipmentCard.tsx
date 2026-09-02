@@ -36,7 +36,7 @@ export function EquipmentCard({ equipment }: { equipment: EquipmentCardData }) {
   return (
     <GlowCard className="group">
       <Link href={`/inventory/${equipmentSlug(equipment)}`} className="block">
-        <div className="relative aspect-[4/3] overflow-hidden bg-white/5">
+        <div className="relative aspect-square overflow-hidden bg-white/5">
           <img
             src={photo}
             alt={alt}

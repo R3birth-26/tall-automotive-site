@@ -14,7 +14,7 @@ export function PhotoGallery({
 
   return (
     <div>
-      <div className="aspect-[4/3] w-full overflow-hidden rounded-lg bg-neutral-100">
+      <div className="aspect-square w-full overflow-hidden rounded-lg bg-neutral-100">
         <img src={images[active].url} alt={alt} className="h-full w-full object-cover" />
       </div>
       {images.length > 1 && (
@@ -24,7 +24,7 @@ export function PhotoGallery({
               key={img.id}
               type="button"
               onClick={() => setActive(i)}
-              className={`aspect-[4/3] overflow-hidden rounded border-2 ${
+              className={`aspect-square overflow-hidden rounded border-2 ${
                 i === active ? "border-brand-red" : "border-transparent"
               }`}
             >
