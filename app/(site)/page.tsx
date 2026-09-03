@@ -156,8 +156,8 @@ export default async function HomePage() {
         <div className="mx-auto max-w-6xl">
           <div className="group relative overflow-hidden rounded-2xl border border-white/10 shadow-2xl">
             <img
-              src="/images/badboy-bg.jpg"
-              alt="Bad Boy ZT Elite zero-turn mower"
+              src="/images/bad-boy-authorized.jpg"
+              alt="Landscaping crew mowing at sunset on Bad Boy zero-turn mowers"
               className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
             />
             <div className="absolute inset-0 bg-gradient-to-r from-black/10 via-black/50 to-black/90" />
