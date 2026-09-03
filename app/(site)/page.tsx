@@ -44,8 +44,13 @@ export default async function HomePage() {
             <p className="font-display text-sm font-semibold uppercase tracking-[0.3em] text-brand-red">
               Hampstead, NH — Mowers, Tractors &amp; Equipment
             </p>
-            <h1 className="font-display mt-3 text-3xl font-bold leading-tight text-white sm:text-4xl md:text-5xl lg:text-6xl">
-              Mowers, Tractors &amp; Power Equipment Sales and Service in Hampstead, NH
+            <h1 className="font-display mt-3 leading-tight text-white">
+              <span className="block text-4xl font-bold sm:text-5xl md:text-6xl lg:text-7xl">
+                Mowers, Tractors &amp; Power Equipment
+              </span>
+              <span className="mt-2 block text-xl font-semibold italic text-brand-red sm:text-2xl md:text-3xl">
+                Sales and Service in Hampstead, NH
+              </span>
             </h1>
             <p className="mt-4 text-base text-neutral-200 sm:text-lg">
               Shop residential and commercial mowers, tractors, mini excavators, and handheld
