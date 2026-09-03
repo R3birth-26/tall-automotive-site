@@ -5,6 +5,20 @@ import { FixedGradientBackground } from "@/components/FixedGradientBackground";
 import { equipmentCategories } from "@/lib/site";
 import type { Prisma } from "@/app/generated/prisma/client";
 
+// Category-specific hero copy, keyed by the ?category= value the "Shop
+// Mowers" / "Shop Tractors" nav links set. Unfiltered (Shop All) and any
+// category without an entry fall back to the plain "Inventory" heading.
+const categoryCopy: Record<string, { title: string; sub: string }> = {
+  Mowers: {
+    title: "Mow With Attitude",
+    sub: "Meet the commercial and residential mowers that revolutionized the zero-turn lawnmower game.",
+  },
+  Tractors: {
+    title: "Work With Attitude",
+    sub: "Say hello to our new line of tractors that maintain our history of power, performance, and attitude.",
+  },
+};
+
 export async function generateMetadata({ searchParams }: PageProps<"/inventory">): Promise<Metadata> {
   const sp = await searchParams;
   const category = typeof sp.category === "string" ? sp.category : undefined;
@@ -61,8 +75,15 @@ export default async function InventoryPage({
     <div className="relative">
       <FixedGradientBackground />
       <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6">
-        <h1 className="font-display text-4xl font-bold text-white sm:text-5xl">Inventory</h1>
-        <p className="mt-1 text-white/50">{items.length} items found</p>
+        <h1 className="font-display text-4xl font-bold text-white sm:text-5xl">
+          {categoryCopy[category ?? ""]?.title ?? "Inventory"}
+        </h1>
+        {categoryCopy[category ?? ""] && (
+          <p className="mt-2 max-w-2xl text-lg text-neutral-300">
+            {categoryCopy[category ?? ""].sub}
+          </p>
+        )}
+        <p className="mt-1 text-sm text-white/50">{items.length} items found</p>
 
         <div className="mt-8 grid grid-cols-1 gap-8 lg:grid-cols-4">
           <form method="get" className="lg:col-span-1">
