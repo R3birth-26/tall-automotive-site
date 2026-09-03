@@ -6,8 +6,9 @@ import { equipmentCategories } from "@/lib/site";
 import type { Prisma } from "@/app/generated/prisma/client";
 
 // Category-specific hero copy, keyed by the ?category= value the "Shop
-// Mowers" / "Shop Tractors" nav links set. Unfiltered (Shop All) and any
-// category without an entry fall back to the plain "Inventory" heading.
+// Mowers" / "Shop Tractors" nav links set. The "" key is the unfiltered
+// Shop All page (the page reads `category ?? ""`). Any category without an
+// entry (e.g. Handhelds) falls back to the plain "Inventory" heading.
 // When a category has a `hero` banner (title + sub already baked into the
 // artwork), the banner is shown in place of the text heading; the h1 stays
 // in the DOM as sr-only for search engines and screen readers.
@@ -15,9 +16,17 @@ const categoryCopy: Record<
   string,
   { title: string; sub: string; hero?: { src: string; width: number; height: number } }
 > = {
+  "": {
+    // Title-only banner, so sub is empty: the img alt ends up "" and the
+    // sr-only h1 carries the text — screen readers hear it once, not twice.
+    title: "Power. Performance. Attitude.",
+    sub: "",
+    hero: { src: "/images/inventory-hero.jpg", width: 1672, height: 941 },
+  },
   Mowers: {
     title: "Mow With Attitude",
     sub: "Meet the commercial and residential mowers that revolutionized the zero-turn lawnmower game.",
+    hero: { src: "/images/mowers-hero.jpg", width: 1672, height: 941 },
   },
   Tractors: {
     title: "Work With Attitude",
